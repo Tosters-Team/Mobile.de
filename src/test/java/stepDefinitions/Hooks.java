@@ -1,4 +1,4 @@
-package hooks;
+package stepDefinitions;
 
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.TimeUnit;
 
-import static hooks.Hooks.driver;
+import static stepDefinitions.Hooks.driver;
 
 public class Action {
 
