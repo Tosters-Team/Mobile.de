@@ -22,6 +22,49 @@ public class CarListPage {
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[2]/a/div/div[2]/div[3]/div/div[2]/div/div[1]")
     private WebElement parkThirdCarButton;
 
+    @FindBy(xpath = "/html/body/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[1]/a/div/div[2]/div[1]/div[1]/div/span") //temporary
+    private WebElement firstHeaderAnnouncement;
+
+    @FindBy(xpath = "/html/body/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[2]/a/div/div[2]/div[1]/div[1]/div/span") //temporary
+    private WebElement secondHeaderAnnouncement;
+
+    @FindBy(xpath = "/html/body/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[3]/a/div/div[2]/div[1]/div[1]/div/span") //temporary
+    private WebElement thirdHeaderAnnouncement;
+
+    @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[1]/a/div/div[2]/div[1]/div[2]/div[1]/span")
+    private WebElement firstPriceTag;
+
+    @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[2]/a/div/div[2]/div[1]/div[2]/div[1]/span")
+    private WebElement secondPriceTag;
+    @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[3]/a/div/div[2]/div[1]/div[2]/div[1]/span")
+    private WebElement thirdPriceTag;
+
+
+    public WebElement getFirstHeaderAnnouncement() {
+        return firstHeaderAnnouncement;
+    }
+
+    public WebElement getSecondHeaderAnnouncement() {
+        return secondHeaderAnnouncement;
+    }
+
+    public WebElement getThirdHeaderAnnouncement() {
+        return thirdHeaderAnnouncement;
+    }
+
+    public WebElement getFirstPriceTag() {
+        return firstPriceTag;
+    }
+
+    public WebElement getSecondPriceTag() {
+        return secondPriceTag;
+    }
+
+    public WebElement getThirdPriceTag() {
+        return thirdPriceTag;
+    }
+
+
     public WebElement getParkFirstCarButton() {
         return parkFirstCarButton;
     }
