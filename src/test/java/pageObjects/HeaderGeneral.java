@@ -40,6 +40,13 @@ public class HeaderGeneral {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]")
     private WebElement germanLanguage;
 
+    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/span/span")
+    private WebElement textOnHeader;
+
+    public WebElement getTextOnHeader() {
+        return textOnHeader;
+    }
+
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]/ul/li[1]")
     private WebElement englishLanguage;
 

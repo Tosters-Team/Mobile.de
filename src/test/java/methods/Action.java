@@ -17,22 +17,32 @@ public class Action {
             .pollingEvery(2, TimeUnit.SECONDS)
             .ignoring(NoSuchElementException.class);
 
-    static void clickOnWebElement(WebElement webElement) {
+    public static void clickOnWebElement(WebElement webElement) {
         webElement.click();
     }
 
-    static void sendKeys(WebElement field, String inputData) {
+    public static void sendKeys(WebElement field, String inputData) {
         field.sendKeys(inputData);
     }
 
-    static void waitUntilVisible(WebElement webElement) {
+    public static void waitUntilVisible(WebElement webElement) {
         waiter.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    static void waitUntilClickable(WebElement webElement){
+    public static void waitUntilClickable(WebElement webElement) {
         waiter.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
+    public static void webElementContainsText(String text, WebElement webElement){
+            webElement.getText().contains(text);
+    }
+
+    public static void quitDriver() {
+        if (null != driver) {
+            driver.quit();
+            driver = null;
+        }
+    }
 
 
 }
