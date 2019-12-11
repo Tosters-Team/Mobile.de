@@ -22,4 +22,28 @@ public class CarParkPage {
 
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[3]/div/div/div/button[2]/span")
     private WebElement deleteThirdCarButton;
+
+    public WebElement getFirstCompareCheckBox() {
+        return firstCompareCheckBox;
+    }
+
+    public WebElement getSecondCompareCheckBox() {
+        return secondCompareCheckBox;
+    }
+
+    public WebElement getFirstAddNoteButton() {
+        return firstAddNoteButton;
+    }
+
+    public WebElement getFirstAddNoteField() {
+        return firstAddNoteField;
+    }
+
+    public WebElement getRunComparisonButton() {
+        return runComparisonButton;
+    }
+
+    public WebElement getDeleteThirdCarButton() {
+        return deleteThirdCarButton;
+    }
 }
