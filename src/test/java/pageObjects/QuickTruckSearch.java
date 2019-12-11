@@ -1,9 +1,18 @@
 package pageObjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class QuickTruckSearch {
+
+    public QuickTruckSearch(WebDriver driver) {
+
+        PageFactory.initElements(driver, this);
+
+    }
+
     @FindBy(xpath = "//*[@id=\"rbt-VUT75-link\"]/i")
     private WebElement vansNtRucksUpTo7p5t;
 
