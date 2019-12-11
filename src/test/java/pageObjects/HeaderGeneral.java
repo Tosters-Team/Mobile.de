@@ -23,6 +23,9 @@ public class HeaderGeneral {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]")
     private WebElement mySearchesButton;
 
+    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[2]/a/span/span")
+    private WebElement showMySearches;
+
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     private WebElement logoHomePageButton;
 
@@ -31,4 +34,44 @@ public class HeaderGeneral {
 
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]/ul/li[1]")
     private WebElement englishLanguage;
+
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getMyMobileDeDropDown() {
+        return myMobileDeDropDown;
+    }
+
+    public WebElement getLogoutOption() {
+        return logoutOption;
+    }
+
+    public WebElement getEditAccountOption() {
+        return editAccountOption;
+    }
+
+    public WebElement getMyCarParkButton() {
+        return myCarParkButton;
+    }
+
+    public WebElement getMySearchesButton() {
+        return mySearchesButton;
+    }
+
+    public WebElement getShowMySearches() {
+        return showMySearches;
+    }
+
+    public WebElement getLogoHomePageButton() {
+        return logoHomePageButton;
+    }
+
+    public WebElement getGermanLanguage() {
+        return germanLanguage;
+    }
+
+    public WebElement getEnglishLanguage() {
+        return englishLanguage;
+    }
 }
