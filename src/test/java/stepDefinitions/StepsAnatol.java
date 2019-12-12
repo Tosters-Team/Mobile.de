@@ -6,16 +6,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import methods.Action;
 import org.junit.Assert;
-import pageObjects.*;
-import static stepDefinitions.Hooks.driver;
+
+import static pageObjects.InitPages.*;
 
 public class StepsAnatol {
 
-    public static HeaderGeneral headerGeneral = new HeaderGeneral(driver);
-    public static HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
-    public static CarListPage carListPage = new CarListPage(driver);
-    public static LoginPage loginPage = new LoginPage(driver);
-    public static CarParkPage carParkPage = new CarParkPage(driver);
 
     @Given("mobile de is opened and language changed to English")
     public void mobileDeIsOpenedAndLanguageChangedToEnglish() {
@@ -43,13 +38,13 @@ public class StepsAnatol {
     }
 
     @And("click on park button to add the second car")
-    public void addTheSecondCarInCarPark() throws InterruptedException{
+    public void addTheSecondCarInCarPark() throws InterruptedException {
         Thread.sleep(2000);
         Action.clickOnWebElement(carListPage.getParkSecondCarButton());
     }
 
     @And("click on car park button")
-    public void clickOnCarParkButton() throws InterruptedException{
+    public void clickOnCarParkButton() throws InterruptedException {
         Thread.sleep(2000);
         Action.clickOnWebElement(headerGeneral.getMyCarParkButton());
     }

@@ -1,18 +1,19 @@
 package methods;
 
+import static pageObjects.InitPages.*;
+
 import enums.MakesAndModels;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import stepDefinitions.StepsArtur;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Random;
 
 public class Helper {
-    private static final WebElement[] ARRAY_OF_FIRST_THREE_HEADERS_PRICE = new WebElement[] {StepsArtur.carListPage.getFirstPriceTag(),StepsArtur.carListPage.getSecondPriceTag(),StepsArtur.carListPage.getThirdPriceTag()};
+    private static final WebElement[] ARRAY_OF_FIRST_THREE_HEADERS_PRICE = new WebElement[]{carListPage.getFirstPriceTag(), carListPage.getSecondPriceTag(), carListPage.getThirdPriceTag()};
 
-    private static final WebElement[] ARRAY_OF_FIRST_THREE_HEADERS_ANNOUNCE = new WebElement[] {StepsArtur.carListPage.getFirstHeaderAnnouncement(),StepsArtur.carListPage.getSecondHeaderAnnouncement(),StepsArtur.carListPage.getThirdHeaderAnnouncement()};
+    private static final WebElement[] ARRAY_OF_FIRST_THREE_HEADERS_ANNOUNCE = new WebElement[]{carListPage.getFirstHeaderAnnouncement(), carListPage.getSecondHeaderAnnouncement(), carListPage.getThirdHeaderAnnouncement()};
 
     private static WebElement returnsWebElement(WebElement[] toSort) {
         Random generator = new Random();

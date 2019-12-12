@@ -1,5 +1,6 @@
 @Artur
 Feature: Demo feature
+
   Background: opening browser
     Given Mobile de is opened and language changed to English
 
@@ -14,3 +15,10 @@ Feature: Demo feature
       | BMW           | 5     | €10,000 |
       | Mercedes-Benz | E     | €15,000 |
       | Audi          | A6    | €8,000  |
+
+
+  Scenario: Validate Login functionality positive
+    Given Login page is opened
+    When I provide valid credentials Email and Password
+    And click on Log in Button
+    Then I have successfully logged in
