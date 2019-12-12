@@ -7,7 +7,6 @@ import cucumber.api.java.en.When;
 import methods.Action;
 import org.junit.Assert;
 import pageObjects.*;
-
 import static stepDefinitions.Hooks.driver;
 
 public class StepsAnatol {
@@ -38,25 +37,26 @@ public class StepsAnatol {
     }
 
     @When("click on park button to add the first car")
-    public void addTheFirstCarInCarPark() {
+    public void addTheFirstCarInCarPark() throws InterruptedException {
+        Thread.sleep(2000);
         Action.clickOnWebElement(carListPage.getParkFirstCarButton());
     }
 
     @And("click on park button to add the second car")
-    public void addTheSecondCarInCarPark() {
+    public void addTheSecondCarInCarPark() throws InterruptedException{
+        Thread.sleep(2000);
         Action.clickOnWebElement(carListPage.getParkSecondCarButton());
     }
 
     @And("click on car park button")
-    public void clickOnCarParkButton() {
+    public void clickOnCarParkButton() throws InterruptedException{
+        Thread.sleep(2000);
         Action.clickOnWebElement(headerGeneral.getMyCarParkButton());
     }
 
     @Then("added cars are displayed")
     public void carsAreDisplayed() {
-        Assert.assertTrue(Action.webElementContainsText("270898524",
-                carParkPage.getFirstCarInCarParkIsDisplayed()));
-        Assert.assertTrue(Action.webElementContainsText("286623876",
-                carParkPage.getSecondCarInCarParkIsDisplayed()));
+        Assert.assertTrue(Action.webElementContainsText("2",
+                headerGeneral.getMyCarParkButton()));
     }
 }

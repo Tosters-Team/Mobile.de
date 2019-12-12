@@ -31,20 +31,6 @@ public class CarParkPage {
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[3]/div/div/div/button[2]/span")
     private WebElement deleteThirdCarButton;
 
-    @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[2]/div/div/a")
-    private WebElement firstCarInCarParkIsDisplayed;
-
-    @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[1]/div/div/a")
-    private WebElement secondCarInCarParkIsDisplayed;
-
-    public WebElement getFirstCarInCarParkIsDisplayed() {
-        return firstCarInCarParkIsDisplayed;
-    }
-
-    public WebElement getSecondCarInCarParkIsDisplayed() {
-        return secondCarInCarParkIsDisplayed;
-    }
-
     public WebElement getFirstCompareCheckBox() {
         return firstCompareCheckBox;
     }
