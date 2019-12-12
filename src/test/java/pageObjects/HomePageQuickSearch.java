@@ -3,15 +3,35 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class HomePageQuickSearch {
+public class HomePageQuickSearch extends InitPages {
+
 
     public HomePageQuickSearch(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
+    @Override
+    public WebElement getWebElementByName(String pageName) {
+        super.getWebElementByName(pageName);
+        switch (pageName) {
+            case "BMW":
+                return getMakeBmw();
+            case "Mercedes-Benz":
+                return getMakeMercedes();
+            case "Audi":
+                return getMakeAudi();
+            case "A6":
+                return getModelA6Audi();
+            case "5":
+                return getModelFiveSeriesBmw();
+            case "E":
+                return getModelEClassMercedes();
+            default:
+                return null;
+        }
+    }
+
 
     @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
     private WebElement sellTab;

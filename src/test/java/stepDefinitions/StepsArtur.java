@@ -6,14 +6,22 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import methods.Action;
 import methods.Helper;
+import pageObjects.HeaderGeneral;
+import pageObjects.HomePageQuickSearch;
+import pageObjects.InitPages;
+import pageObjects.LoginPage;
 
-import static pageObjects.InitPages.*;
-
+import static stepDefinitions.Hooks.driver;
 import java.text.ParseException;
-import java.util.Objects;
 
 public class StepsArtur {
 
+
+    HeaderGeneral headerGeneral = new HeaderGeneral(driver);
+    InitPages homePageQuickSearch = new HomePageQuickSearch(driver);
+    HomePageQuickSearch homePageQuickSearch2 = new HomePageQuickSearch(driver);
+    LoginPage loginPage = new LoginPage(driver);
+    Helper helper = new Helper();
 
     @Given("Mobile de is opened and language changed to English")
     public void mobileDeIsOpenedAndLanguageChangedToEnglish() {
@@ -23,30 +31,36 @@ public class StepsArtur {
     }
 
     @When("I select (.*) in Make drop-down")
-    public void iSelectMakeInMakeDropDown(String make) {
-        Action.clickOnWebElement(Objects.requireNonNull(Helper.getWebElementFromEnum(make)));
-        Action.waitUntilVisible(Helper.getWebElementFromEnum(make));
+    public void iSelectMakeInMakeDropDown(String make) throws InterruptedException {
+        Action.clickOnWebElement(homePageQuickSearch.getWebElementByName(make));
+        Thread.sleep(2000);
+//        Action.clickOnWebElement(Objects.requireNonNull(Helper.getWebElementFromEnum(make)));
+        Action.waitUntilVisible(homePageQuickSearch.getWebElementByName(make));
+        Thread.sleep(2000);
     }
 
     @And("select (.*) in Model drop-down")
-    public void selectModelInModelDropDown(String model) {
-        Action.clickOnWebElement(Objects.requireNonNull(Helper.getWebElementFromEnum(model)));
+    public void selectModelInModelDropDown(String model) throws InterruptedException {
+        Action.clickOnWebElement(homePageQuickSearch.getWebElementByName(model));
+        Thread.sleep(2000);
+//        Action.clickOnWebElement(Objects.requireNonNull(Helper.getWebElementFromEnum(model)));
         Action.waitUntilVisible(Helper.getWebElementFromEnum(model));
     }
 
     @And("select price up to (.*)")
-    public void selectPriceUpToPrice(String price) {
-        Action.sendKeys(homePageQuickSearch.getPriceUpTo(), price);
+    public void selectPriceUpToPrice(String price) throws InterruptedException {
+        Thread.sleep(2000);
+        Action.sendKeys(homePageQuickSearch2.getPriceUpTo(), price);
     }
 
     @And("click on Search button")
     public void clickOnSearchButton() {
-        Action.clickOnWebElement(homePageQuickSearch.getSearchButton());
+        Action.clickOnWebElement(homePageQuickSearch2.getSearchButton());
     }
 
     @Then("cars search was done and only cars of (.*) and (.*) under (.*) are displayed")
     public void carsSearchWasDoneAndOnlyCarsOfMakeAndModelUnderPriceAreDisplayed(String make, String model, String price) throws ParseException {
-        Helper.assert_is_make_model_underPrice(make, model, price);
+        helper.assert_is_make_model_underPrice(make, model, price);
     }
 
     @Given("Login page is opened")
