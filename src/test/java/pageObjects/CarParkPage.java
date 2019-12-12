@@ -5,12 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CarParkPage {
+public class CarParkPage extends InitPages{
+
 
     public CarParkPage(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
 
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[1]/div/div/div/div[1]")

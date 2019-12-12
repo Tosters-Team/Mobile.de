@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DetailedCarSearchPage {
+public class DetailedCarSearchPage extends InitPages{
 
     public DetailedCarSearchPage(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
 
     @FindBy(xpath = "//*[@id=\"usage-NEW-ds\"]")
     private WebElement conditionNew;

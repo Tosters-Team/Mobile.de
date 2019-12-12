@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SellPage {
+public class SellPage extends InitPages{
 
     public SellPage(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
 
     @FindBy(xpath = "//*[@id=\"select-make\"]")
     private WebElement brand;

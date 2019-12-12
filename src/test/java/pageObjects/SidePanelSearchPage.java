@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SidePanelSearchPage {
+public class SidePanelSearchPage extends InitPages{
 
     public SidePanelSearchPage(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
 
     @FindBy(xpath = "//*[@id=\"sio-opener-condition\"]/div[2]/div[2]/span")
     private WebElement vehicleConditionChange;

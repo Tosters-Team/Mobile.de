@@ -5,12 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class QuickTruckSearch {
+public class QuickTruckSearch extends InitPages{
+
 
     public QuickTruckSearch(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
 
     @FindBy(xpath = "//*[@id=\"rbt-VUT75-link\"]/i")

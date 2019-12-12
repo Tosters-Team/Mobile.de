@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HeaderGeneral {
+public class HeaderGeneral extends InitPages{
 
     public HeaderGeneral(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
 
     @FindBy(xpath = "//*[@id=\"hdmylogin\"]/span")
     private WebElement loginButton;

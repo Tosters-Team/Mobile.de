@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EditAccountPage {
+public class EditAccountPage extends InitPages{
 
     public EditAccountPage(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
-
+        super(driver);
     }
+
 
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/a/span")
     private WebElement changePassword;

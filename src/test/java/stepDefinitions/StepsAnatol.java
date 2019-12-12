@@ -6,11 +6,16 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import methods.Action;
 import org.junit.Assert;
+import pageObjects.*;
 
-import static pageObjects.InitPages.*;
+import static stepDefinitions.Hooks.driver;
 
 public class StepsAnatol {
 
+        private HeaderGeneral headerGeneral = new HeaderGeneral(driver);
+        private LoginPage loginPage = new LoginPage(driver);
+        private HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
+        private CarListPage carListPage = new CarListPage(driver);
 
     @Given("mobile de is opened and language changed to English")
     public void mobileDeIsOpenedAndLanguageChangedToEnglish() {
