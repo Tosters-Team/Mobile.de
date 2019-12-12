@@ -6,19 +6,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import methods.Action;
 import methods.Helper;
-import pageObjects.CarListPage;
-import pageObjects.HeaderGeneral;
-import pageObjects.HomePageQuickSearch;
 
-import static stepDefinitions.Hooks.driver;
+import static pageObjects.InitPages.*;
 
 import java.text.ParseException;
 import java.util.Objects;
 
 public class StepsArtur {
-    public static HeaderGeneral headerGeneral = new HeaderGeneral(driver);
-    public static HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
-    public static CarListPage carListPage = new CarListPage(driver);
 
 
     @Given("Mobile de is opened and language changed to English")
@@ -53,5 +47,27 @@ public class StepsArtur {
     @Then("cars search was done and only cars of (.*) and (.*) under (.*) are displayed")
     public void carsSearchWasDoneAndOnlyCarsOfMakeAndModelUnderPriceAreDisplayed(String make, String model, String price) throws ParseException {
         Helper.assert_is_make_model_underPrice(make, model, price);
+    }
+
+    @Given("Login page is opened")
+    public void loginPageIsOpened() {
+        Action.clickOnWebElement(headerGeneral.getLoginButton());
+        Action.waitUntilVisible(loginPage.getLoginButton());
+    }
+
+    @When("I provide valid credentials Email and Password")
+    public void iProvideValidCredentialsEmailPassword() {
+        Action.sendKeys(loginPage.getEMailField(), "vangartur@gmail.com");
+        Action.sendKeys(loginPage.getPasswordField(), "Artiq!23");
+    }
+
+    @And("click on Log in Button")
+    public void clickOnLogInButton() {
+        Action.clickOnWebElement(loginPage.getLoginButton());
+    }
+
+    @Then("I have successfully logged in")
+    public void iHaveSuccessfullyLoggedIn() {
+        Action.webElementContainsText("MyMobile.de", headerGeneral.getMyMobileDeDropDown());
     }
 }
