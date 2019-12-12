@@ -33,8 +33,8 @@ public class Action {
         waiter.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public static void webElementContainsText(String text, WebElement webElement){
-            webElement.getText().contains(text);
+    public static boolean webElementContainsText(String text, WebElement webElement){
+        return webElement.getText().contains(text);
     }
 
     public static void quitDriver() {
