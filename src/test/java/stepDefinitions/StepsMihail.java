@@ -4,11 +4,17 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.en_old.Ac;
 import methods.Action;
-
+import pageObjects.*;
 import static pageObjects.InitPages.*;
-
+import static stepDefinitions.Hooks.driver;
 public class StepsMihail {
+
+    HeaderGeneral headerGeneral = new HeaderGeneral(driver);
+    HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
+    DetailedCarSearchPage detailedCarSearchPage = new DetailedCarSearchPage(driver);
+
     @Given("Mobile.de website is accessed and the language is set to english")
     public void mobileDeWebsiteIsAccessedAndTheLanguageIsSetToEnglish() {
         Action.clickOnWebElement(headerGeneral.getGermanLanguage());
@@ -73,6 +79,21 @@ public class StepsMihail {
     public void availableOffersPageIsDisplayingContainingVehiclesThatMachTheSearchCriteria() throws InterruptedException {
         System.out.println("Mologhets");
 
-        Thread.sleep(20000);
+        Thread.sleep(5000);
     }
+    //---------------------------------------------------------------------------------------------------------------------
+    LoginPage loginPage = new LoginPage(driver);
+    @Given("user has logged in and accessed Sell page")
+    public void userHasLoggedInAndAccessedSellPage() {
+        Action.clickOnWebElement(headerGeneral.getLoginButton());
+        Action.sendKeys(loginPage.getEMailField(), "trifonovmihail@mail.ru");
+        Action.sendKeys(loginPage.getPasswordField(), "Mobile.De629");
+        Action.clickOnWebElement(loginPage.getLoginButton());
+        Action.clickOnWebElement(homePageQuickSearch.getSellTab());
+
+    }
+
+
+
+
 }

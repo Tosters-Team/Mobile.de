@@ -29,5 +29,9 @@ Feature: Detailed search feature
     And user chooses <selling_plan> and enters <zip_code> and clicks on continue button
     Then user is redirected to results page where he can see the price of his car
     Examples:
-      | make     | model | year | month | KMs    | fuelType | description | equipment | selling_plan | zip_code |
-      | MERCEDES | VANEO | 2004 | MAY   | 195000 | DIESEL   | CDI1.7      | TREND     | 1            | 54126    |
+      | make     | model   | year | month | KMs    | fuelType | description | equipment | selling_plan | zip_code |
+      | MERCEDES | VANEO   | 2004 | MAY   | 195000 | DIESEL   | CDI1.7      | TREND     | 1            | 54126    |
+      | RENAULT  | ESPACE  | 2005 | JUNE  | 250000 | DIESEL   | 2.2DCI      | INITIALE  | 2            | 62148    |
+      | KIA      | SORENTO | 2005 | APRIL | 150000 | PETROL   | 3.5V6       | EX        | 3            | 75482    |
+
+
