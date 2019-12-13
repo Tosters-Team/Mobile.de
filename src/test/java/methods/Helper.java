@@ -2,7 +2,7 @@ package methods;
 
 import static pageObjects.InitPages.*;
 
-import enums.MakesAndModels;
+import enums.Examples;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pageObjects.CarListPage;
@@ -37,7 +37,7 @@ public class Helper {
     }
 
     public static WebElement getWebElementFromEnum(String string) {
-        for (MakesAndModels b : MakesAndModels.values()) {
+        for (Examples b : Examples.values()) {
             if (b.getToCall().equalsIgnoreCase(string)) {
                 return b.getWebElement();
             }

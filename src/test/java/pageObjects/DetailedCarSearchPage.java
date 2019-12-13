@@ -12,6 +12,9 @@ public class DetailedCarSearchPage extends InitPages{
     }
 
 
+    @FindBy(xpath = "//*[@id=\"form-dsp\"]/div[1]/div/article/section/div/div[1]/h1")
+    private WebElement pageHeader;
+
     @FindBy(xpath = "//*[@id=\"usage-NEW-ds\"]")
     private WebElement conditionNew;
 
@@ -93,13 +96,12 @@ public class DetailedCarSearchPage extends InitPages{
     @FindBy(xpath = "//*[@id=\"dsp-upper-search-btn\"]")
     private WebElement showOffersButton;
 
-    public WebElement getConditionNew() {
-        return conditionNew;
+    public WebElement getCondition(String condition) {
+        if (condition.equals("NEW")) return conditionNew;
+        if (condition.equals("USED")) return conditionUsed;
+        else return null;
     }
 
-    public WebElement getConditionUsed() {
-        return conditionUsed;
-    }
 
     public WebElement getMake() {
         return make;
@@ -109,32 +111,25 @@ public class DetailedCarSearchPage extends InitPages{
         return model;
     }
 
-    public WebElement getVehicleTypeCabriolet() {
-        return vehicleTypeCabriolet;
-    }
-
-    public WebElement getVehicleTypeEstate() {
-        return vehicleTypeEstate;
-    }
-
-    public WebElement getVehicleTypeSaloon() {
-        return vehicleTypeSaloon;
-    }
-
-    public WebElement getVehicleTypeSmallCar() {
-        return vehicleTypeSmallCar;
-    }
-
-    public WebElement getVehicleTypeCoupe() {
-        return vehicleTypeCoupe;
-    }
-
-    public WebElement getVehicleTypeSuv() {
-        return vehicleTypeSuv;
-    }
-
-    public WebElement getVeicleTypeVan() {
-        return veicleTypeVan;
+    public WebElement getVehicleType(String type) {
+        switch (type) {
+            case "CABRIOLET":
+                return vehicleTypeCabriolet;
+            case "ESTATE":
+                return vehicleTypeEstate;
+            case "SALOON":
+                return vehicleTypeSaloon;
+            case "SMALLCAR":
+                return vehicleTypeSmallCar;
+            case "COUPE":
+                return vehicleTypeCoupe;
+            case "SUV":
+                return vehicleTypeSuv;
+            case "VAN":
+                return veicleTypeVan;
+            default:
+                return null;
+        }
     }
 
     public WebElement getPriceFrom() {
@@ -169,24 +164,23 @@ public class DetailedCarSearchPage extends InitPages{
         return powerTo;
     }
 
-    public WebElement getFuelTypePetrol() {
-        return fuelTypePetrol;
+    public WebElement getFuelType(String fuelType) {
+        if (fuelType.equals("PETROL")) return fuelTypePetrol;
+        if (fuelType.equals("DIESEL")) return fuelTypeDiesel;
+        else return null;
     }
 
-    public WebElement getFuelTypeDiesel() {
-        return fuelTypeDiesel;
-    }
-
-    public WebElement getTransmissionTypeManual() {
-        return transmissionTypeManual;
-    }
-
-    public WebElement getTransmissionTypeSemiAuto() {
-        return transmissionTypeSemiAuto;
-    }
-
-    public WebElement getTransmissionTypeAuto() {
-        return transmissionTypeAuto;
+    public WebElement getTranmissionType(String transmission) {
+        switch (transmission) {
+            case "MANUAL":
+                return transmissionTypeManual;
+            case "SEMIAUTO":
+                return transmissionTypeSemiAuto;
+            case "AUTOMATIC":
+                return transmissionTypeAuto;
+            default:
+                return null;
+        }
     }
 
     public WebElement getCubicCapacityFrom() {
@@ -199,5 +193,9 @@ public class DetailedCarSearchPage extends InitPages{
 
     public WebElement getShowOffersButton() {
         return showOffersButton;
+    }
+
+    public WebElement getPageHeader() {
+        return pageHeader;
     }
 }

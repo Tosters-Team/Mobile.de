@@ -5,7 +5,7 @@ import pageObjects.HomePageQuickSearch;
 
 import static stepDefinitions.Hooks.driver;
 
-public enum MakesAndModels {
+public enum Examples {
     BMW("BMW", new HomePageQuickSearch(driver).getMakeBmw()),
     MERCEDES("Mercedes-Benz", new HomePageQuickSearch(driver).getMakeMercedes()),
     AUDI("Audi", new HomePageQuickSearch(driver).getMakeAudi()),
@@ -13,6 +13,7 @@ public enum MakesAndModels {
     MODEL_A6("A6", new HomePageQuickSearch(driver).getModelA6Audi()),
     MODEL_FIVESERIES("5", new HomePageQuickSearch(driver).getModelFiveSeriesBmw()),
     MODEL_ECLASS("E", new HomePageQuickSearch(driver).getModelEClassMercedes());
+
 
     private String toCall;
     private WebElement webElement;
@@ -25,7 +26,7 @@ public enum MakesAndModels {
         return webElement;
     }
 
-    MakesAndModels(String toCall, WebElement webElement) {
+    Examples(String toCall, WebElement webElement) {
         this.toCall = toCall;
         this.webElement = webElement;
     }
