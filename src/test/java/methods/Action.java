@@ -25,6 +25,13 @@ public class Action {
         field.sendKeys(inputData);
     }
 
+    public static void sendKeys2(WebElement field, String inputData) {
+        field.clear();
+        field.sendKeys(inputData);
+    }
+
+
+
     public static void waitUntilVisible(WebElement webElement) {
         waiter.until(ExpectedConditions.visibilityOf(webElement));
     }

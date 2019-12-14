@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class QuickTruckSearch extends InitPages{
+public class QuickTruckSearch extends InitPages {
 
 
     public QuickTruckSearch(WebDriver driver) {
@@ -39,12 +39,48 @@ public class QuickTruckSearch extends InitPages{
     @FindBy(xpath = "//*[@id=\"rbt-FT-link\"]/i")
     private WebElement forkliftTrucks;
 
-    @FindBy(xpath = "//*[@id=\"form-dsp\"]/div[1]/div/article/section/div/div[1]/h1")
+    @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div/div/div/ol/li[3]")
     private WebElement generalTrucksCategoryHeader;
+
+    @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div[2]/div/div/div/h3")
+    private WebElement quickTruckPageHeader;
+
+    public WebElement getQuickTruckPageHeader() {
+        return quickTruckPageHeader;
+    }
+
+    @Override
+    public WebElement getWebElementByName(String pageName) {
+        super.getWebElementByName(pageName);
+        switch (pageName) {
+            case "Vans and Trucks up to 7.5 t":
+                return getVansNtRucksUpTo7p5t();
+            case "Trucks over 7.5 t":
+                return getTrucksOver7p5t();
+            case "Semi-Trailer Trucks":
+                return getSemiTrailerTruck();
+            case "Trailers":
+                return getTrailersCategory();
+            case "Semi-Trailers":
+                return getSemiTrailers();
+            case "Construction Machines":
+                return getConstructionMachines();
+            case "Buses":
+                return getBusesCategory();
+            case "Agricultural Vehicles":
+                return getAgriculturalVehicles();
+            case "Forklift Trucks":
+                return getForkliftTrucks();
+            default:
+                return null;
+        }
+    }
 
     public WebElement getVansNtRucksUpTo7p5t() {
         return vansNtRucksUpTo7p5t;
     }
+
+
 
     public WebElement getTrucksOver7p5t() {
         return trucksOver7p5t;
