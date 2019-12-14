@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Random;
+import static pageObjects.InitPages.*;
 
 import static stepDefinitions.Hooks.driver;
 
@@ -41,5 +42,14 @@ public class Helper {
             }
         }
         return null;
+    }
+
+    public static void getParkRandomCars(List<WebElement> webElements, List<WebElement> carIsParked, int amount) {
+        Random randomNumber = new Random();
+        for (int i = 1; i <= amount; i++) {
+            int parkRandomCar = randomNumber.nextInt(webElements.size());
+            clickOnWebElement(webElements.get(parkRandomCar));
+            waitUntilVisible(carIsParked.get(parkRandomCar));
+        }
     }
 }
