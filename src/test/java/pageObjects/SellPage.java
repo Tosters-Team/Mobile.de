@@ -34,10 +34,40 @@ public class SellPage extends InitPages{
     private WebElement getFuelTypePetrol;
 
     @FindBy(xpath = "//*[@id=\"select-modelname\"]")
-    private WebElement modelDescription;
+    private WebElement modelDescriptionDropDown;
 
-    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[1]/div[1]/div/label/svg/path[1]")
+    @FindBy(xpath = "//*[@id=\"select-modelname\"]/option[1]")
+    private WebElement modelDescription1;
+
+    @FindBy(xpath = "//*[@id=\"select-modelname\"]/option[2]")
+    private WebElement modelDescription2;
+
+    @FindBy(xpath = "//*[@id=\"select-modelname\"]/option[3]")
+    private WebElement modelDescription3;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[1]/div[2]")
     private WebElement equipmentLevelOption1;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[2]/div[2]")
+    private WebElement equipmentLevelOption2;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[3]/div[2]")
+    private WebElement equipmentLevelOption3;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[4]/div[2]")
+    private WebElement equipmentLevelOption4;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[5]/div[2]")
+    private WebElement equipmentLevelOption5;
+
+    @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[6]/div[2]")
+    private WebElement equipmentLevelOption6;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/article/div/section[2]/div/div/div/div/form/div[3]/div[3]/div[4]/div/div/div/div[1]/label")
+    private WebElement whenToSellOption1;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/article/div/section[2]/div/div/div/div/form/div[3]/div[3]/div[4]/div/div/div/div[2]/label")
+    private WebElement whenToSellOption2;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/article/div/section[2]/div/div/div/div/form/div[3]/div[3]/div[4]/div/div/div/div[3]/label")
     private WebElement whenToSellOption3;
@@ -74,24 +104,44 @@ public class SellPage extends InitPages{
         return mileage;
     }
 
-    public WebElement getFuelTypeDiesel() {
-        return fuelTypeDiesel;
+    public WebElement getFuelType(String fuelType) {
+        if(fuelType.equals("PETROL")) return getFuelTypePetrol;
+        if(fuelType.equals("DIESEL")) return fuelTypeDiesel;
+        else return null;
     }
 
-    public WebElement getGetFuelTypePetrol() {
-        return getFuelTypePetrol;
+    public WebElement getModelDescriptionDropDown() {
+        return modelDescriptionDropDown;
     }
 
-    public WebElement getModelDescription() {
-        return modelDescription;
+    public WebElement getModelDescriptionOption(String option) {
+        switch (option) {
+            case "1": return modelDescription1;
+            case "2": return modelDescription2;
+            case "3": return modelDescription3;
+            default: return null;
+        }
     }
 
-    public WebElement getEquipmentLevelOption1() {
-        return equipmentLevelOption1;
+    public WebElement getEquipmentLevelOption(String trim) {
+        switch (trim) {
+            case "1": return equipmentLevelOption1;
+            case "2": return equipmentLevelOption2;
+            case "3": return equipmentLevelOption3;
+            case "4": return equipmentLevelOption4;
+            case "5": return equipmentLevelOption5;
+            case "6": return equipmentLevelOption6;
+            default: return null;
+        }
     }
 
-    public WebElement getWhenToSellOption3() {
-        return whenToSellOption3;
+    public WebElement getWhenToSellOption(String sellOption) {
+        switch (sellOption) {
+            case "1": return whenToSellOption1;
+            case "2": return whenToSellOption2;
+            case "3": return whenToSellOption3;
+            default: return null;
+        }
     }
 
     public WebElement getZipCode() {
