@@ -5,11 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class SidePanelSearchPage extends InitPages{
 
     public SidePanelSearchPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(xpath = "[id^='sio-'][id$='-search-btn']")
+    private WebElement showOffersOnPopup;
 
 
     @FindBy(xpath = "//*[@id=\"sio-opener-condition\"]/div[2]/div[2]/span")
@@ -53,6 +58,25 @@ public class SidePanelSearchPage extends InitPages{
 
     @FindBy(xpath = "//*[@id=\"minisearch-search-btn\"]")
     private WebElement showOffersGeneralButton;
+
+    @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[2]/div")
+    private WebElement displayedOption;
+
+    @FindBy(xpath = "/html/body/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[2]/div/a/i")
+    private WebElement closeDisplayedOption;
+
+    public WebElement getOptionType(String optionType) {
+        switch (optionType){
+            case "Price_from"        : return priceFrom;
+            case "Price_to"          : return priceTo;
+            case "Registration_from" : return firstRegistrationFrom;
+            case "Registration_to"   : return firstRegistrationTo;
+            case "Kilometer_from"    : return kilometerFrom;
+            case "Kilometer_to"      : return kilometerTo;
+            default: return  null;
+        }
+    }
+
 
     public WebElement getVehicleConditionChange() {
         return vehicleConditionChange;
@@ -108,5 +132,13 @@ public class SidePanelSearchPage extends InitPages{
 
     public WebElement getShowOffersGeneralButton() {
         return showOffersGeneralButton;
+    }
+
+    public WebElement getDisplayedOption() {
+        return displayedOption;
+    }
+
+    public WebElement getCloseDisplayedOption() {
+        return closeDisplayedOption;
     }
 }
