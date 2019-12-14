@@ -19,10 +19,10 @@ public class HomePageQuickSearch extends InitPages {
                 return getMakeBmw();
             case "Mercedes-Benz":
                 return getMakeMercedes();
-            case "Audi":
-                return getMakeAudi();
-            case "A6":
-                return getModelA6Audi();
+            case "Volkswagen":
+                return getMakeVolkswagen();
+            case "Golf":
+                return getModelGolf();
             case "5":
                 return getModelFiveSeriesBmw();
             case "E":
@@ -51,14 +51,14 @@ public class HomePageQuickSearch extends InitPages {
     @FindBy(xpath = "//*[@id=\"qsmakeBuy\"]/option[77]")
     private WebElement makeMercedes;
 
-    @FindBy(xpath = "//*[@id=\"qsmakeBuy\"]/option[16]")
-    private WebElement makeAudi;
+    @FindBy(xpath = "//*[@id=\"qsmakeBuy\"]/option[3]")
+    private WebElement makeVolkswagen;
 
     @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[65]")
     private WebElement modelFiveSeriesBmw;
 
-    @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[13]")
-    private WebElement modelA6Audi;
+    @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[16]")
+    private WebElement modelGolf;
 
     @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[142]")
     private WebElement modelEClassMercedes;
@@ -90,16 +90,16 @@ public class HomePageQuickSearch extends InitPages {
         return makeMercedes;
     }
 
-    public WebElement getMakeAudi() {
-        return makeAudi;
+    public WebElement getMakeVolkswagen() {
+        return makeVolkswagen;
     }
 
     public WebElement getModelFiveSeriesBmw() {
         return modelFiveSeriesBmw;
     }
 
-    public WebElement getModelA6Audi() {
-        return modelA6Audi;
+    public WebElement getModelGolf() {
+        return modelGolf;
     }
 
     public WebElement getModelEClassMercedes() {

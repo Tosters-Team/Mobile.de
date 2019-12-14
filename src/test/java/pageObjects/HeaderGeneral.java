@@ -21,7 +21,7 @@ public class HeaderGeneral extends InitPages{
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[3]/ul/li[6]")
     private WebElement logoutOption;
 
-    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[3]/ul/li[5]")
+    @FindBy(xpath = "//*[@id=\"hdmyacc\"]")
     private WebElement editAccountOption;
 
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
