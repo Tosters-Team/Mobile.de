@@ -18,7 +18,7 @@ public class DriverFactory {
                 driver = new ChromeDriver();
                 break;
             case "IExplorer":
-                System.setProperty("webdriver.IEDriverServer.driver", "src/main/resources/IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", "src/main/resources/IEDriverServer.exe");
                 driver = new InternetExplorerDriver();
                 break;
         }
