@@ -55,11 +55,9 @@ public abstract class InitPages {
     }
 
     public static void clickOnAllFromList(List<WebElement> listOfWebElements) {
-        for (int i = 0; i < listOfWebElements.size(); i++) {
-            waiter.until(ExpectedConditions.visibilityOf(listOfWebElements.get(i)));
-            waiter.until(ExpectedConditions.elementToBeClickable(listOfWebElements.get(i)));
-            listOfWebElements.get(i).click();
+        InitPages.waitUntilVisible(listOfWebElements.get(0));
+        for (int i = listOfWebElements.size() - 1; i >= 0; i--) {
+            clickOnWebElement(listOfWebElements.get(i));
         }
-
     }
 }
