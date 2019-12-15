@@ -62,4 +62,20 @@ public abstract class InitPages {
         }
 
     }
+
+    public static int getPriceForComparison(String price) {
+        int priceInt = Integer.parseInt(price);
+        return priceInt;
+    }
+
+    public static int getYearForComparison(String year) {
+        int yearInt = Integer.parseInt(year);
+        return yearInt;
+    }
+
+    public static int getMileageForComparisson(String mileage) {
+        System.out.println("V init pageah problema");
+        int mileageInt = Integer.parseInt(mileage);
+        return mileageInt;
+    }
 }

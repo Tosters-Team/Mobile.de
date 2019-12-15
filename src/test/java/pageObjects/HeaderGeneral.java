@@ -49,6 +49,13 @@ public class HeaderGeneral extends InitPages{
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]/ul/li[1]")
     private WebElement englishLanguage;
 
+    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
+    private WebElement mobileDeLogo;
+
+    public WebElement getMobileDeLogo() {
+        return mobileDeLogo;
+    }
+
     public WebElement getLoginButton() {
         return loginButton;
     }
