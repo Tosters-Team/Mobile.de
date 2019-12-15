@@ -4,6 +4,7 @@ import enums.Examples;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pageObjects.CarListPage;
+import pageObjects.InitPages;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -46,6 +47,7 @@ public class Helper {
 
     public static void getParkRandomCars(List<WebElement> webElements, List<WebElement> carIsParked, int amount) {
         Random randomNumber = new Random();
+        InitPages.waitUntilVisible(webElements.get(0));
         for (int i = 1; i <= amount; i++) {
             int parkRandomCar = randomNumber.nextInt(webElements.size());
             clickOnWebElement(webElements.get(parkRandomCar));
