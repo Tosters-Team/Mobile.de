@@ -6,6 +6,7 @@ import pageObjects.QuickTruckSearch;
 
 import static stepDefinitions.Hooks.driver;
 
+
 public enum Examples {
     BMW("BMW", new HomePageQuickSearch(driver).getMakeBmw()),
     MERCEDES("Mercedes-Benz", new HomePageQuickSearch(driver).getMakeMercedes()),
