@@ -3,6 +3,7 @@ package utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverFactory {
 
@@ -19,7 +20,18 @@ public class DriverFactory {
                 break;
             case "IExplorer":
                 System.setProperty("webdriver.ie.driver", "src/main/resources/IEDriverServer.exe");
-                driver = new InternetExplorerDriver();
+                DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
+
+                ieCapabilities.setCapability("nativeEvents", false);
+                ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
+                ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
+                ieCapabilities.setCapability("disable-popup-blocking", true);
+                ieCapabilities.setCapability("enablePersistentHover", true);
+                ieCapabilities.setCapability("ignoreZoomSetting", true);
+
+                driver = new InternetExplorerDriver(ieCapabilities);
+//                System.setProperty("webdriver.ie.driver", "src/main/resources/IEDriverServer.exe");
+//                driver = new InternetExplorerDriver();
                 break;
         }
 
