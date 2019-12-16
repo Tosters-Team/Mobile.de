@@ -31,12 +31,13 @@ public abstract class InitPages {
     private static final Wait waiter = new FluentWait<>(driver)
             .withTimeout(30, TimeUnit.SECONDS)
             .pollingEvery(2, TimeUnit.SECONDS)
-            .ignoring(NoSuchElementException.class);
+            .ignoring(NoSuchElementException.class)
+            .ignoring(StaleElementReferenceException.class);
 
     public static void clickOnWebElement(WebElement webElement) {
-        waiter.until(ExpectedConditions.visibilityOf(webElement));
-        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
-        webElement.click();
+            waiter.until(ExpectedConditions.visibilityOf(webElement));
+            waiter.until(ExpectedConditions.elementToBeClickable(webElement));
+            webElement.click();
     }
 
     public static void sendKeys(WebElement field, String inputData) {

@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import com.sun.org.apache.xml.internal.security.Init;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,8 +18,8 @@ public class StepsMihail {
     DetailedCarSearchPage detailedCarSearchPage = new DetailedCarSearchPage(driver);
     BackupCarListPage backupCarListPage = new BackupCarListPage(driver);
 
-    @Given("Mobile.de website is accessed and the language is set to english")
-    public void mobileDeWebsiteIsAccessedAndTheLanguageIsSetToEnglish() {
+    @Given("Mobile.de website is accessed and the language is set to English")
+    public void mobileDeWebsiteIsAccessedAndTheLanguageIsSetToEnglish() throws InterruptedException {
         InitPages.clickOnWebElement(headerGeneral.getGermanLanguage());
         InitPages.clickOnWebElement(headerGeneral.getEnglishLanguage());
         InitPages.webElementContainsText("Biggest Vehicle Marketplace Online", headerGeneral.getTextOnHeader());
@@ -35,7 +34,7 @@ public class StepsMihail {
 
     @When("user chooses desired (.*) in condition category on detailed search page")
     public void userSelectsVehicleSConditionOnDetailedSearchPage(String condition) {
-        InitPages.clickOnWebElement(detailedCarSearchPage.getCondition(condition));
+        Action.clickOnWebElement(detailedCarSearchPage.getCondition(condition));
     }
 
     @And("user chooses (.*) and (.*) in make, model, variant category")
@@ -50,7 +49,7 @@ public class StepsMihail {
 
     @And("user chooses (.*) in vehicle type category")
     public void userSelectsVehicleSType(String type) {
-        InitPages.clickOnWebElement(detailedCarSearchPage.getVehicleType(type));
+        Action.clickOnWebElement(detailedCarSearchPage.getVehicleType(type));
 
     }
 
@@ -74,8 +73,8 @@ public class StepsMihail {
 
     @And("user selects (.*) and (.*) and clicks on Show offers button")
     public void userSelectsVehicleSFuel_typeAndTransmissionAndClickOnShowOffersButton(String fuelType, String transmission) {
-        InitPages.clickOnWebElement(detailedCarSearchPage.getFuelType(fuelType));
-        InitPages.clickOnWebElement(detailedCarSearchPage.getTranmissionType(transmission));
+        Action.clickOnWebElement(detailedCarSearchPage.getFuelType(fuelType));
+        Action.clickOnWebElement(detailedCarSearchPage.getTranmissionType(transmission));
         InitPages.clickOnWebElement(detailedCarSearchPage.getShowOffersButton());
     }
 
@@ -84,7 +83,7 @@ public class StepsMihail {
         InitPages.clickOnWebElement(backupCarListPage.getRandomCar());
     }
 
-    @Then("chosen cars options: (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*) match search criteria")
+    @Then("chosen car's options: (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*) match search criteria")
     public void availableOffersPageIsDisplayingContainingVehiclesThatMachTheSearchCriteria(String make, String type,
                 String min_price, String max_price, String fromYear, String toYear, String fromKms, String toKms,
                 String fuel_type, String transmission) throws InterruptedException {
@@ -98,7 +97,7 @@ public class StepsMihail {
         Assert.assertTrue(selectedCarPage.getActualYear()>=InitPages.getYearForComparison(fromYear));
         Assert.assertTrue(selectedCarPage.getActualYear()<=InitPages.getYearForComparison(toYear));
         Assert.assertTrue(selectedCarPage.getActualMileage()>=InitPages.getMileageForComparisson(fromKms));
-        Assert.assertTrue(selectedCarPage.getActualMileage()>=InitPages.getMileageForComparisson(fromKms));
+        Assert.assertTrue(selectedCarPage.getActualMileage()<=InitPages.getMileageForComparisson(toKms));
 
     }
     //---------------------------------------------------------------------------------------------------------------------
@@ -266,13 +265,14 @@ public class StepsMihail {
                 break;
             case "KM ascending":
                 InitPages.clickOnWebElement(backupCarListPage.getFirstCarOnPage());
+                Thread.sleep(5000);
                 firstCarOption = selectedCarPage.getActualMileage();
                 driver.navigate().back();
                 Thread.sleep(5000);
                 InitPages.clickOnWebElement(backupCarListPage.getLastCarOnPage());
                 Thread.sleep(5000);
-                lastCarOption = selectedCarPage.getActualPrice();
-                Assert.assertTrue(firstCarOption<lastCarOption);
+                lastCarOption = selectedCarPage.getActualMileage();
+                Assert.assertTrue(firstCarOption<=lastCarOption);
                 break;
             case "KM descending":
                 InitPages.clickOnWebElement(backupCarListPage.getFirstCarOnPage());
@@ -281,8 +281,8 @@ public class StepsMihail {
                 Thread.sleep(5000);
                 InitPages.clickOnWebElement(backupCarListPage.getLastCarOnPage());
                 Thread.sleep(5000);
-                lastCarOption = selectedCarPage.getActualPrice();
-                Assert.assertTrue(firstCarOption>lastCarOption);
+                lastCarOption = selectedCarPage.getActualMileage();
+                Assert.assertTrue(firstCarOption>=lastCarOption);
                 break;
             case "1st Reg. ascending":
                 InitPages.clickOnWebElement(backupCarListPage.getFirstCarOnPage());
@@ -322,9 +322,9 @@ public class StepsMihail {
     @And("My search page is empty")
     public void mySearchPageIsEmpty() {
         InitPages.clickOnWebElement(headerGeneral.getMySearchesButton());
-        InitPages.clickOnWebElement(headerGeneral.getShowMySearches());
+        Action.clickOnWebElement(headerGeneral.getShowMySearches());
         try {
-            InitPages.clickOnWebElement(mySearchesPage.getDeleteSearch());
+            Action.clickOnWebElement(mySearchesPage.getDeleteSearch());
         } catch (org.openqa.selenium.NoSuchElementException e) {}
 
         try {

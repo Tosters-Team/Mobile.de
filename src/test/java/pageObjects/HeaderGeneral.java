@@ -27,12 +27,14 @@ public class HeaderGeneral extends InitPages{
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
     private WebElement myCarParkButton;
 
-    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/header[1]/div[2]/nav[1]/div[1]/ul[2]/li[1]/a[1]")
     private WebElement mySearchesButton;
+    //*[@id="hdmyss2"]
+    //*[@id="main-header"]/div[2]/nav/div/ul[2]/li[1]
 
-    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[2]/a/span/span")
+    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[1]/a/span")
     private WebElement showMySearches;
-
+    //               /html[1]/body[1]/div[2]/div[1]/header[1]/div[2]/nav[1]/div[1]/ul[2]/li[1]/ul[1]/li[2]/a[1]/span[1]/span[1]
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     private WebElement logoHomePageButton;
 
