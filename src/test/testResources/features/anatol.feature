@@ -35,10 +35,10 @@ Feature: Demo feature
     And click on hide note button and click show note button
     Then the same <text> is displayed
     Examples:
-      | text   |
-      | Anatol |
-      | Tolean |
-      | Tolik  |
+      | text           |
+      | Text           |
+      | Some Text      |
+      | Add Note Field |
 
   Scenario: Validate Compare functionality on My Car Park page Compare these cars
     Given user is logged in Mobile de and search button was clicked
