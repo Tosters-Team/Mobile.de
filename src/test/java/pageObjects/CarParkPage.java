@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,8 +8,8 @@ import java.util.List;
 public class CarParkPage extends InitPages {
 
 
-    public CarParkPage(WebDriver driver) {
-        super(driver);
+    public CarParkPage() {
+        super();
     }
 
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[1]/div")

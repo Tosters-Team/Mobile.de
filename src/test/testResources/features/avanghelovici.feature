@@ -48,10 +48,7 @@ Feature: Demo feature
     Then pop-up message about invalid credentials is displayed
 
   Scenario Outline: Validate account data editing functionality
-    Given Login page is opened
-    And User provide valid credentials Email and Password
-    And clicks on Log in Button
-    And User was successfully logged in
+    Given User was successfully logged in
     When Edit Account page is opened
     And User changes <first> and <last> name and presses save button
     And changes street to <street> and house number to <houseNumber>

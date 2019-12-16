@@ -10,16 +10,14 @@ import org.junit.Assert;
 import pageObjects.*;
 import scenarion_context.ScenarioContext;
 
-import static stepDefinitions.Hooks.driver;
-
 public class StepsAnatol {
 
-    private HeaderGeneral headerGeneral = new HeaderGeneral(driver);
-    private LoginPage loginPage = new LoginPage(driver);
-    private HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
-    private CarListPage carListPage = new CarListPage(driver);
-    private CarParkPage carParkPage = new CarParkPage(driver);
-    private ComparisonPage comparisonPage = new ComparisonPage(driver);
+    private HeaderGeneral headerGeneral = new HeaderGeneral();
+    private LoginPage loginPage = new LoginPage();
+    private HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch();
+    private CarListPage carListPage = new CarListPage();
+    private CarParkPage carParkPage = new CarParkPage();
+    private ComparisonPage comparisonPage = new ComparisonPage();
 
 
     @Given("user is logged in Mobile de and search button was clicked")

@@ -1,13 +1,11 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 public class MySearchesPage extends InitPages{
 
-    public MySearchesPage(WebDriver driver) {
-        super(driver);
+    public MySearchesPage() {
+        super();
     }
 
     @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div[1]/div/div[2]/p[2]")

@@ -1,14 +1,13 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ComparisonPage extends InitPages{
 
 
-    public ComparisonPage(WebDriver driver) {
-        super(driver);
+    public ComparisonPage() {
+        super();
     }
 
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div/h1")

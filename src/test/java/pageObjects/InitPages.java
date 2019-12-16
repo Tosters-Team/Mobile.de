@@ -3,7 +3,6 @@ package pageObjects;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,12 +15,12 @@ import java.util.concurrent.TimeUnit;
 import static stepDefinitions.Hooks.driver;
 
 public abstract class InitPages {
-    private WebDriver webDriver;
+
     private WebElement webElement;
 
-    public InitPages(WebDriver driver) {
+    public InitPages() {
         PageFactory.initElements(driver, this);
-        this.webDriver = driver;
+
     }
 
     public WebElement getWebElementByName(String pageName) {
