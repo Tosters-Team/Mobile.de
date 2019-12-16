@@ -2,6 +2,7 @@ package pageObjects;
 
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -21,7 +22,6 @@ public abstract class InitPages {
     public InitPages(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.webDriver = driver;
-
     }
 
     public WebElement getWebElementByName(String pageName) {
@@ -46,6 +46,12 @@ public abstract class InitPages {
         field.sendKeys(inputData);
     }
 
+    public static void sendKeysWithOutClearField(WebElement field, String inputData){
+        waiter.until(ExpectedConditions.visibilityOf(field));
+        waiter.until(ExpectedConditions.elementToBeClickable(field));
+        field.sendKeys(inputData);
+    }
+
     public static void waitUntilVisible(WebElement webElement) {
         waiter.until(ExpectedConditions.visibilityOf(webElement));
     }
@@ -55,7 +61,7 @@ public abstract class InitPages {
     }
 
     public static void clickOnAllFromList(List<WebElement> listOfWebElements) {
-        InitPages.waitUntilVisible(listOfWebElements.get(0));
+        InitPages.waitUntilVisible(listOfWebElements.get(listOfWebElements.size()-1));
         for (int i = listOfWebElements.size() - 1; i >= 0; i--) {
             clickOnWebElement(listOfWebElements.get(i));
         }

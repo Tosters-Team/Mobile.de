@@ -47,11 +47,12 @@ public class Helper {
 
     public static void getParkRandomCars(List<WebElement> webElements, List<WebElement> carIsParked, int amount) {
         Random randomNumber = new Random();
-        InitPages.waitUntilVisible(webElements.get(0));
+        InitPages.waitUntilVisible(webElements.get(webElements.size()-1));
         for (int i = 1; i <= amount; i++) {
             int parkRandomCar = randomNumber.nextInt(webElements.size());
             clickOnWebElement(webElements.get(parkRandomCar));
             waitUntilVisible(carIsParked.get(parkRandomCar));
+            webElements.remove(parkRandomCar);
         }
     }
 }

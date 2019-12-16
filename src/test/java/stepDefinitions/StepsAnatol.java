@@ -8,6 +8,7 @@ import methods.Helper;
 import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import pageObjects.*;
+import scenarion_context.ScenarioContext;
 
 import static stepDefinitions.Hooks.driver;
 
@@ -23,10 +24,16 @@ public class StepsAnatol {
 
     @Given("user is logged in Mobile de and search button was clicked")
     public void loginAndClickOnSearchButton() {
+        ScenarioContext.getInstance().setCurrentPage(headerGeneral);
+        ScenarioContext.getInstance().getCurrentPage();
         InitPages.clickOnWebElement(headerGeneral.getLoginButton());
+        ScenarioContext.getInstance().setCurrentPage(loginPage);
+        ScenarioContext.getInstance().getCurrentPage();
         InitPages.sendKeys(loginPage.getEMailField(), "leecooper_leecooper@mail.ru");
         InitPages.sendKeys(loginPage.getPasswordField(), "HappyTest123");
         InitPages.clickOnWebElement(loginPage.getLoginButton());
+        ScenarioContext.getInstance().setCurrentPage(homePageQuickSearch);
+        ScenarioContext.getInstance().getCurrentPage();
         InitPages.clickOnWebElement(homePageQuickSearch.getSearchButton());
     }
 
@@ -39,8 +46,7 @@ public class StepsAnatol {
     public void carsAreDisplayed() {
         Assert.assertTrue("car is displayed",
                 InitPages.webElementContainsText("1", carParkPage.getAmountOfCars()));
-
-        if (!InitPages.webElementContainsText("0", carParkPage.getAmountOfCars())) {
+        if (carParkPage.getAmountOfCars().isDisplayed()) {
             InitPages.clickOnAllFromList(carParkPage.getRemoveCarButtons());
         }
     }
@@ -59,7 +65,7 @@ public class StepsAnatol {
                 InitPages.webElementContainsText("Vehicle Comparison ",
                         comparisonPage.getComparisonPageHeader()));
         InitPages.clickOnWebElement(headerGeneral.getMyCarParkButton());
-        if (!InitPages.webElementContainsText("0", carParkPage.getAmountOfCars())) {
+        if (carParkPage.getAmountOfCars().isDisplayed()) {
             InitPages.clickOnAllFromList(carParkPage.getRemoveCarButtons());
         }
     }
@@ -69,10 +75,9 @@ public class StepsAnatol {
         MatcherAssert.assertThat("The same text is displayed",
                 carParkPage.getFirstAddNoteField().
                         getText().equals(noteText));
-        if (!InitPages.webElementContainsText("0", carParkPage.getAmountOfCars())) {
+        if (carParkPage.getAmountOfCars().isDisplayed()) {
             InitPages.clickOnAllFromList(carParkPage.getRemoveCarButtons());
         }
-
     }
 
     @And("car park button was clicked")
@@ -118,7 +123,8 @@ public class StepsAnatol {
         MatcherAssert.assertThat("delete button is displayed",
                 carParkPage.getRemoveCarButtons().
                         get(0).isDisplayed());
-        if (!InitPages.webElementContainsText("0", carParkPage.getAmountOfCars())) {
+        InitPages.clickOnWebElement(headerGeneral.getMyCarParkButton());
+        if (carParkPage.getAmountOfCars().isDisplayed()) {
             InitPages.clickOnAllFromList(carParkPage.getRemoveCarButtons());
         }
     }
@@ -126,8 +132,8 @@ public class StepsAnatol {
     @Then("message {string} is displayed")
     public void messageIsDisplayed(String informativeMessage) {
         Assert.assertTrue("Car Park is empty",
-               InitPages.webElementContainsText(informativeMessage,
-                       carParkPage.getInformativeMessage()));
+                InitPages.webElementContainsText(informativeMessage,
+                        carParkPage.getInformativeMessage()));
     }
 
     @And("user click on delete button")
