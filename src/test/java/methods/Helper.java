@@ -10,12 +10,12 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Random;
-import static pageObjects.InitPages.*;
 
-import static stepDefinitions.Hooks.driver;
+import static pageObjects.InitPages.clickOnWebElement;
+import static pageObjects.InitPages.waitUntilVisible;
 
 public class Helper {
-    private CarListPage carListPage = new CarListPage(driver);
+    private CarListPage carListPage = new CarListPage();
 
 
     private WebElement getRandomCar(List<WebElement> list) {

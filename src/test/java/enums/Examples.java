@@ -4,27 +4,25 @@ import org.openqa.selenium.WebElement;
 import pageObjects.HomePageQuickSearch;
 import pageObjects.QuickTruckSearch;
 
-import static stepDefinitions.Hooks.driver;
-
 
 public enum Examples {
-    BMW("BMW", new HomePageQuickSearch(driver).getMakeBmw()),
-    MERCEDES("Mercedes-Benz", new HomePageQuickSearch(driver).getMakeMercedes()),
-    AUDI("Audi", new HomePageQuickSearch(driver).getMakeVolkswagen()),
+    BMW("BMW", new HomePageQuickSearch().getMakeBmw()),
+    MERCEDES("Mercedes-Benz", new HomePageQuickSearch().getMakeMercedes()),
+    AUDI("Audi", new HomePageQuickSearch().getMakeVolkswagen()),
 
-    MODEL_A6("A6", new HomePageQuickSearch(driver).getModelGolf()),
-    MODEL_FIVESERIES("5", new HomePageQuickSearch(driver).getModelFiveSeriesBmw()),
-    MODEL_ECLASS("E", new HomePageQuickSearch(driver).getModelEClassMercedes()),
+    MODEL_A6("A6", new HomePageQuickSearch().getModelGolf()),
+    MODEL_FIVESERIES("5", new HomePageQuickSearch().getModelFiveSeriesBmw()),
+    MODEL_ECLASS("E", new HomePageQuickSearch().getModelEClassMercedes()),
 
-    VANSANDTRUCKUNDER7AND5T("Vans and Trucks up to 7.5 t", new QuickTruckSearch(driver).getVansNtRucksUpTo7p5t()),
-    TRUCKSOVER7AND5T("Trucks over 7.5 t", new QuickTruckSearch(driver).getTrucksOver7p5t()),
-    SEMITRUCKSTRAILERS("Semi-Trailer Trucks", new QuickTruckSearch(driver).getSemiTrailerTruck()),
-    TRAILERS("Trailers", new QuickTruckSearch(driver).getTrailersCategory()),
-    SEMITRAILERS("Semi-Trailers", new QuickTruckSearch(driver).getSemiTrailers()),
-    CONSTRUCTIONMACHINES("Construction Machines", new QuickTruckSearch(driver).getConstructionMachines()),
-    BUSES("Buses", new QuickTruckSearch(driver).getBusesCategory()),
-    AGRICULTURALVEHICLES("Agricultural Vehicles", new QuickTruckSearch(driver).getAgriculturalVehicles()),
-    FORKLIFTTRUCKS("Forklift Trucks", new QuickTruckSearch(driver).getForkliftTrucks());
+    VANSANDTRUCKUNDER7AND5T("Vans and Trucks up to 7.5 t", new QuickTruckSearch().getVansNtRucksUpTo7p5t()),
+    TRUCKSOVER7AND5T("Trucks over 7.5 t", new QuickTruckSearch().getTrucksOver7p5t()),
+    SEMITRUCKSTRAILERS("Semi-Trailer Trucks", new QuickTruckSearch().getSemiTrailerTruck()),
+    TRAILERS("Trailers", new QuickTruckSearch().getTrailersCategory()),
+    SEMITRAILERS("Semi-Trailers", new QuickTruckSearch().getSemiTrailers()),
+    CONSTRUCTIONMACHINES("Construction Machines", new QuickTruckSearch().getConstructionMachines()),
+    BUSES("Buses", new QuickTruckSearch().getBusesCategory()),
+    AGRICULTURALVEHICLES("Agricultural Vehicles", new QuickTruckSearch().getAgriculturalVehicles()),
+    FORKLIFTTRUCKS("Forklift Trucks", new QuickTruckSearch().getForkliftTrucks());
 
 
     private String toCall;

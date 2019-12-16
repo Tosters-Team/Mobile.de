@@ -1,14 +1,13 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePageQuickSearch extends InitPages {
 
 
-    public HomePageQuickSearch(WebDriver driver) {
-        super(driver);
+    public HomePageQuickSearch() {
+        super();
     }
 
     @Override

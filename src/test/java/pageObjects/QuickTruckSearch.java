@@ -1,15 +1,13 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class QuickTruckSearch extends InitPages {
 
 
-    public QuickTruckSearch(WebDriver driver) {
-        super(driver);
+    public QuickTruckSearch() {
+        super();
     }
 
     @FindBy(xpath = "//*[@id=\"rbt-VUT75-link\"]/i")

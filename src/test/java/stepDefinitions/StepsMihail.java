@@ -4,19 +4,17 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.en_old.Ac;
 import methods.Action;
-import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import pageObjects.*;
-import static pageObjects.InitPages.*;
+
 import static stepDefinitions.Hooks.driver;
 public class StepsMihail {
 
-    HeaderGeneral headerGeneral = new HeaderGeneral(driver);
-    HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch(driver);
-    DetailedCarSearchPage detailedCarSearchPage = new DetailedCarSearchPage(driver);
-    BackupCarListPage backupCarListPage = new BackupCarListPage(driver);
+    HeaderGeneral headerGeneral = new HeaderGeneral();
+    HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch();
+    DetailedCarSearchPage detailedCarSearchPage = new DetailedCarSearchPage();
+    BackupCarListPage backupCarListPage = new BackupCarListPage();
 
     @Given("Mobile.de website is accessed and the language is set to English")
     public void mobileDeWebsiteIsAccessedAndTheLanguageIsSetToEnglish() throws InterruptedException {
@@ -101,8 +99,8 @@ public class StepsMihail {
 
     }
     //---------------------------------------------------------------------------------------------------------------------
-    LoginPage loginPage = new LoginPage(driver);
-    SellPage sellPage = new SellPage(driver);
+    LoginPage loginPage = new LoginPage();
+    SellPage sellPage = new SellPage();
 
     @Given("user has logged in and accessed Sell page")
     public void userHasLoggedInAndAccessedSellPage() {
@@ -179,7 +177,7 @@ public class StepsMihail {
     }
 
     //---------------------------------------------------------------------------------------------------------------------
-    SidePanelSearchPage sidePanelSearchPage = new SidePanelSearchPage(driver);
+    SidePanelSearchPage sidePanelSearchPage = new SidePanelSearchPage();
 
     @Given("user accessed car list page without entering any search criteria")
     public void userAccessedCarListPageWithoutEnteringAnySearchCriteria() throws InterruptedException {
@@ -224,7 +222,7 @@ public class StepsMihail {
     }
 
     //---------------------------------------------------------------------------------------------------------------------
-    SelectedCarPage selectedCarPage = new SelectedCarPage(driver);
+    SelectedCarPage selectedCarPage = new SelectedCarPage();
     @And("user pressed Show Offers Button and was redirected to car list page")
     public void userPressedShowOffersButtonAndWasRedirectedToCarListPage() {
         InitPages.clickOnWebElement(detailedCarSearchPage.getShowOffersButton());
@@ -309,7 +307,7 @@ public class StepsMihail {
     }
 
     //--------------------------------------------------------------------------------------------------------------------
-    MySearchesPage mySearchesPage = new MySearchesPage(driver);
+    MySearchesPage mySearchesPage = new MySearchesPage();
     @Given("user is logged in on Mobile.de")
     public void userIsLoggedInOnMobileDe() {
         InitPages.clickOnWebElement(headerGeneral.getLoginButton());

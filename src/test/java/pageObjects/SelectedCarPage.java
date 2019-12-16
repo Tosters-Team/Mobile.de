@@ -1,12 +1,11 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SelectedCarPage extends InitPages {
-    public SelectedCarPage(WebDriver driver) {
-        super(driver);
+    public SelectedCarPage() {
+        super();
     }
 
     @FindBy(xpath = "//*[@id=\"rbt-ad-title\"]")

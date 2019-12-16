@@ -1,14 +1,12 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class SellPage extends InitPages{
 
-    public SellPage(WebDriver driver) {
-        super(driver);
+    public SellPage() {
+        super();
     }
 
 
