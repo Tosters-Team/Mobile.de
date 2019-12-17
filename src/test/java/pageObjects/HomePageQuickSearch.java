@@ -35,12 +35,15 @@ public class HomePageQuickSearch extends InitPages {
     @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
     private WebElement sellTab;
 
+    @WebElementName(name = "Search Button")
     @FindBy(xpath = "//*[@id=\"qssub\"]")
     private WebElement searchButton;
 
+    @WebElementName(name = "Detailed Search link")
     @FindBy(xpath = "//*[@id=\"qsdet\"]")
     private WebElement detailedSearch;
 
+    @WebElementName(name = "Truck Tab")
     @FindBy(xpath = "//*[@id=\"qs-categories__TrucksTab\"]/i")
     private WebElement truckTab;
 
