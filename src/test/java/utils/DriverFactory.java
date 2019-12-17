@@ -15,11 +15,11 @@ public class DriverFactory {
         switch (driverName) {
 
             case "Chrome":
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/testResources/chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             case "IExplorer":
-                System.setProperty("webdriver.ie.driver", "src/main/resources/IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", "src/test/testResources/IEDriverServer.exe");
                 DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
 
                 ieCapabilities.setCapability("nativeEvents", false);

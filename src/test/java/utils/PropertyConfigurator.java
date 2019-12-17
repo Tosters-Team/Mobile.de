@@ -17,20 +17,21 @@ public class PropertyConfigurator {
         }
     }
 
-    public static String getProperty(String key){
-       return prop.getProperty(key);
+    public static String getProperty(String key) {
+        return prop.getProperty(key);
     }
+
 
     private static Properties readPropertiesFile() throws IOException {
         FileInputStream fis = null;
         Properties prop = null;
         try {
-            fis = new FileInputStream("src/main/resources/test.properties");
+            fis = new FileInputStream("src/test/testResources/properties/test.properties");
             prop = new Properties();
             prop.load(fis);
-        } catch(FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             fis.close();

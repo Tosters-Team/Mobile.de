@@ -5,10 +5,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import methods.Helper;
+import org.junit.Assert;
 import pageObjects.*;
 import utils.ScreenShotUtil;
 
-import java.text.ParseException;
 
 import static utils.PropertyConfigurator.getProperty;
 
@@ -20,7 +20,7 @@ public class StepsArtur {
     private LoginPage loginPage = new LoginPage();
     private QuickTruckSearch quickTruckSearch = new QuickTruckSearch();
     private EditAccountPage editAccountPage = new EditAccountPage();
-    private Helper helper = new Helper();
+    private CarListPage carListPage = new CarListPage();
 
     @Given("Mobile de is opened and language changed to English")
     public void mobileDeIsOpenedAndLanguageChangedToEnglish() throws Exception {
@@ -39,7 +39,8 @@ public class StepsArtur {
     @And("selects (.*) in Model drop-down")
     public void selectsModelInModelDropDown(String model) throws Exception {
         InitPages.clickOnWebElement(homePageQuickSearch.getWebElementByName(model));
-        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());    }
+        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+    }
 
     @And("selects price up to (.*)")
     public void selectsPriceUpToPrice(String price) throws Exception {
@@ -55,7 +56,9 @@ public class StepsArtur {
 
     @Then("cars search was done and only cars of (.*) and (.*) under (.*) are displayed")
     public void carsSearchWasDoneAndOnlyCarsOfMakeAndModelUnderPriceAreDisplayed(String make, String model, String price) throws Exception {
-        helper.assert_is_make_model_underPrice_ListTest(make, model, price);
+        Assert.assertTrue(Helper.getRandomCar(carListPage.getListAnnouncement()).getText().contains(make));
+        Assert.assertTrue(Helper.getRandomCar(carListPage.getListAnnouncement()).getText().contains(model));
+        Assert.assertTrue(Helper.returnsIntFromParsedString(Helper.getRandomCar(carListPage.getListPrices()).getText()) <= Helper.returnsIntFromParsedString(price));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
     }
 
