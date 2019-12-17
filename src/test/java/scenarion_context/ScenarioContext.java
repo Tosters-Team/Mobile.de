@@ -5,23 +5,24 @@ import pageObjects.InitPages;
 
 public class ScenarioContext {
 
-    private static ScenarioContext scenarioContext = null;
-    private Scenario scenario;
-    private InitPages currentPage;
+    private static ScenarioContext instance = null;
 
-    private ScenarioContext() {
+    private InitPages currentPage;
+    private Scenario scenario;
+
+    public ScenarioContext() {
     }
 
     public void setCurrentPage(InitPages currentPage) {
         this.currentPage = currentPage;
     }
 
-    public void setScenario(Scenario scenario) {
-        this.scenario = scenario;
-    }
-
     public InitPages getCurrentPage() {
         return currentPage;
+    }
+
+    public void setScenario(Scenario scenario) {
+        this.scenario = scenario;
     }
 
     public Scenario getScenario() {
@@ -29,8 +30,8 @@ public class ScenarioContext {
     }
 
     public static ScenarioContext getInstance() {
-        if (scenarioContext == null) {
+        if (instance == null) {
             return new ScenarioContext();
-        } else return scenarioContext;
+        } else return instance;
     }
 }

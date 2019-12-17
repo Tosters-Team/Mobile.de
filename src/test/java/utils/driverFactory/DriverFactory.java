@@ -1,12 +1,14 @@
 package utils.driverFactory;
 
+import utils.driverFactory.enums.DriverType;
+
 public class DriverFactory {
 
-    public static DriverManager getManager(String type) {
+    public static DriverManager getManager(DriverType type) {
 
         DriverManager driverManager;
 
-        switch (type) {
+        switch (type.toString()) {//СПРОСИТЬ ЕСЛИ ЗБС
             case "CHROME":
                 driverManager = new Chrome();
                 break;

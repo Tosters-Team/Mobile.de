@@ -7,6 +7,7 @@ import pageObjects.EditAccountPage;
 import pageObjects.HeaderGeneral;
 import pageObjects.InitPages;
 import pageObjects.LoginPage;
+import scenarion_context.ScenarioContext;
 import utils.Reflection;
 
 public class GenericSteps {
@@ -26,7 +27,10 @@ public class GenericSteps {
 
     @Then("User is on {string}")
     public void userIsOnPage(String page) {
-        InitPages.waitUntilVisible(Reflection.getWebElementByName(loginPage,page));
+        ScenarioContext.getInstance().setCurrentPage(Reflection.getPageByName(page));
+        InitPages.waitUntilVisible(Reflection.getWebElementByName(
+                ScenarioContext.getInstance().
+                        getCurrentPage(),page));//СПРОСИТЬ ЕСЛИ ЗБС
     }
 
     @Then("{string} message is displayed")

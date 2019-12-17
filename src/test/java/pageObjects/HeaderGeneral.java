@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@PageName(name = "Header General")
 public class HeaderGeneral extends InitPages{
 
     public HeaderGeneral() {
@@ -24,7 +24,7 @@ public class HeaderGeneral extends InitPages{
     @FindBy(xpath = "//*[@id=\"hdmyacc\"]")
     private WebElement editAccountOption;
 
-    @WebElementName(name = "Car Park button")
+    @WebElementName(name = "My Car Park button")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
     private WebElement myCarParkButton;
 

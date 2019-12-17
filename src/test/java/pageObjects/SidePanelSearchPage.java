@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@PageName(name = "Side Panel Search Page")
 public class SidePanelSearchPage extends InitPages{
 
     public SidePanelSearchPage() {
