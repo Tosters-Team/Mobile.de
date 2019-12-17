@@ -60,3 +60,11 @@ Feature: Demo feature
       | Jackie | Chan   | ChinaTown        | 22          | 12345   | Hong Kong     |
       | John   | Rambo  | Rambo's str.     | 33          | 23456   | Bowie Arizona |
       | Steven | Seagal | BrokenBones str. | 44          | 34567   | LosAngeles    |
+
+    Scenario: test reflection
+      When User clicks on '[Login Button]'
+      Then User is on 'Login Page'
+      When User provides "Vangartur@gmail.com" in 'Email field'
+      And User provides 'Artiq!23' in 'Password field'
+      And User clicks on '[LogIn button]'
+      Then 'The credentials you provided cannot be confirmed as authentic.' message is displayed

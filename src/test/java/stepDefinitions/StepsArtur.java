@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import methods.Helper;
 import org.junit.Assert;
 import pageObjects.*;
+import utils.Reflection;
 import utils.ScreenShotUtil;
 
 
@@ -188,4 +189,5 @@ public class StepsArtur {
         InitPages.sendKeys(loginPage.getPasswordField(), getProperty("PASSWORD"));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
     }
+
 }

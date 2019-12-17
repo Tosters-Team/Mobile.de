@@ -9,19 +9,22 @@ public class HeaderGeneral extends InitPages{
         super();
     }
 
-
+    @WebElementName(name = "[Login Button]")
     @FindBy(xpath = "//*[@id=\"hdmylogin\"]/span")
     private WebElement loginButton;
 
+    @WebElementName(name = "My Mobile.de drop-down")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[3]")
     private WebElement myMobileDeDropDown;
 
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[3]/ul/li[6]")
     private WebElement logoutOption;
 
+    @WebElementName(name = "Edit Account")
     @FindBy(xpath = "//*[@id=\"hdmyacc\"]")
     private WebElement editAccountOption;
 
+    @WebElementName(name = "Car Park button")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
     private WebElement myCarParkButton;
 
@@ -33,6 +36,7 @@ public class HeaderGeneral extends InitPages{
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[1]/a/span")
     private WebElement showMySearches;
     //               /html[1]/body[1]/div[2]/div[1]/header[1]/div[2]/nav[1]/div[1]/ul[2]/li[1]/ul[1]/li[2]/a[1]/span[1]/span[1]
+
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     private WebElement logoHomePageButton;
 

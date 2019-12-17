@@ -40,8 +40,10 @@ public class QuickTruckSearch extends InitPages {
     @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div/div/div/ol/li[3]")
     private WebElement generalTrucksCategoryHeader;
 
+    @WebElementName(name = "Quick Truck Search")
     @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div[2]/div/div/div/h3")
     private WebElement quickTruckPageHeader;
+
 
     public WebElement getQuickTruckPageHeader() {
         return quickTruckPageHeader;
