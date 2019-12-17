@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@PageName(name = "Selected Car Page")
 public class SelectedCarPage extends InitPages {
     public SelectedCarPage() {
         super();

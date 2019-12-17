@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@PageName(name = "Quick Truck Search")
 public class QuickTruckSearch extends InitPages {
 
 

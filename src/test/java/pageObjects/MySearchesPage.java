@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+@PageName(name = "My Searches Page")
 public class MySearchesPage extends InitPages{
 
     public MySearchesPage() {

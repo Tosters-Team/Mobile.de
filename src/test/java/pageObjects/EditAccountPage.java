@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@PageName(name = "Edit Account Page")
 public class EditAccountPage extends InitPages {
 
     public EditAccountPage() {

@@ -8,7 +8,6 @@ import methods.Helper;
 import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import pageObjects.*;
-import scenarion_context.ScenarioContext;
 
 public class StepsAnatol {
 
@@ -22,22 +21,16 @@ public class StepsAnatol {
 
     @Given("user is logged in Mobile de and search button was clicked")
     public void loginAndClickOnSearchButton() {
-        ScenarioContext.getInstance().setCurrentPage(headerGeneral);
-        ScenarioContext.getInstance().getCurrentPage();
         InitPages.clickOnWebElement(headerGeneral.getLoginButton());
-        ScenarioContext.getInstance().setCurrentPage(loginPage);
-        ScenarioContext.getInstance().getCurrentPage();
         InitPages.sendKeys(loginPage.getEMailField(), "leecooper_leecooper@mail.ru");
         InitPages.sendKeys(loginPage.getPasswordField(), "HappyTest123");
         InitPages.clickOnWebElement(loginPage.getLoginButton());
-        ScenarioContext.getInstance().setCurrentPage(homePageQuickSearch);
-        ScenarioContext.getInstance().getCurrentPage();
         InitPages.clickOnWebElement(homePageQuickSearch.getSearchButton());
     }
 
     @When("{int} random car from list was parked")
     public void randomCarFromListWasParked(int amount) {
-        Helper.getParkRandomCars(carListPage.getParkingButtons(), carListPage.getStatusParked(), amount);
+        Helper.getParkRandomCars(carListPage.getParkButtons(), carListPage.getStatusParked(), amount);
     }
 
     @Then("car is displayed on car park page")

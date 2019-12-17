@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.Random;
-
+@PageName(name = "Backup Car List Page")
 public class BackupCarListPage extends InitPages{
 
     public BackupCarListPage() {

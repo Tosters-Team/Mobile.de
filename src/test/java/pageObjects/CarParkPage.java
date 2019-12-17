@@ -5,33 +5,34 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@PageName(name = "Car Park Page")
 public class CarParkPage extends InitPages {
-
 
     public CarParkPage() {
         super();
     }
 
+    @WebElementName(name = "Compare checkbox")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[1]/div")
     private List<WebElement> compareCheckBoxes;
 
-    public List<WebElement> getCompareCheckBoxes() {
-        return compareCheckBoxes;
-    }
-
+    @WebElementName(name = "Run Comparison button")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/div[2]/div/div[3]")
     private WebElement runComparisonButton;
 
-
+    @WebElementName(name = "Note button")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li/div/div/div/button[1]/span")
     private WebElement firstNoteButton;
 
+    @WebElementName(name = "Note field")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li/div/div/div[2]/textarea")
     private WebElement firstAddNoteField;
 
+    @WebElementName(name = "Remove button")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/button[2]/span")
     private List<WebElement> removeCarButtons;
 
+    @WebElementName(name = "Undo button")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[1]/button/span")
     private List<WebElement> undoCarButtons;
 
@@ -74,6 +75,10 @@ public class CarParkPage extends InitPages {
 
     public WebElement getRunComparisonButton() {
         return runComparisonButton;
+    }
+
+    public List<WebElement> getCompareCheckBoxes() {
+        return compareCheckBoxes;
     }
 
 }
