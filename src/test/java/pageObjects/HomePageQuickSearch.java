@@ -2,8 +2,11 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
+
 @PageName(name = "Home Page Quick Search")
-public class HomePageQuickSearch extends InitPages {
+public class HomePageQuickSearch extends Page {
 
 
     public HomePageQuickSearch() {

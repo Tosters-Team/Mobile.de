@@ -2,8 +2,10 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
+
 @PageName(name = "Comparison Page")
-public class ComparisonPage extends InitPages{
+public class ComparisonPage extends Page {
 
 
     public ComparisonPage() {

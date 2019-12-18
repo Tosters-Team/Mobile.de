@@ -1,16 +1,16 @@
 package utils;
 
 import org.openqa.selenium.WebElement;
-import pageObjects.InitPages;
-import pageObjects.PageName;
-import pageObjects.WebElementName;
+import pageObjects.Page;
+import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
 
 import java.lang.reflect.Field;
 
 
 public class Reflection {
 
-    public static WebElement getWebElementByName(InitPages page, String name) {
+    public static WebElement getWebElementByName(Page page, String name) {
 
         for (Field field : page.getClass().getDeclaredFields()) {
             if (field.getAnnotation(WebElementName.class).name().equals(name)) {
@@ -25,11 +25,11 @@ public class Reflection {
         return null;
     }
 
-    public static InitPages getPageByName(String pageName) {
-        for (Class clazz : InitPages.class.getClasses()) {
+    public static Page getPageByName(String pageName) {
+        for (Class clazz : Page.class.getClasses()) {
             if (clazz.getAnnotation(PageName.class).equals(pageName)) {
                 try {
-                    return InitPages.class.newInstance();
+                    return Page.class.newInstance();
                 } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                 }

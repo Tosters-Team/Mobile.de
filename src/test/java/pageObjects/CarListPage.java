@@ -2,10 +2,12 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
 
 import java.util.List;
 @PageName(name = "Car List Page")
-public class CarListPage extends InitPages {
+public class CarListPage extends Page {
 
     public CarListPage() {
         super();

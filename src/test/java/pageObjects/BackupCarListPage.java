@@ -2,11 +2,12 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
 
 import java.util.List;
 import java.util.Random;
 @PageName(name = "Backup Car List Page")
-public class BackupCarListPage extends InitPages{
+public class BackupCarListPage extends Page {
 
     public BackupCarListPage() {
         super();

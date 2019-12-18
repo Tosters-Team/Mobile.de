@@ -1,4 +1,4 @@
-package methods;
+package actions;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -31,7 +31,6 @@ public class Action {
     }
 
 
-
     public static void waitUntilVisible(WebElement webElement) {
         waiter.until(ExpectedConditions.visibilityOf(webElement));
     }
@@ -40,7 +39,7 @@ public class Action {
         waiter.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public static boolean webElementContainsText(String text, WebElement webElement){
+    public static boolean webElementContainsText(String text, WebElement webElement) {
         return webElement.getText().contains(text);
     }
 
