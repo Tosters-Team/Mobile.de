@@ -2,8 +2,10 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
+
 @PageName(name = "Sell Page")
-public class SellPage extends InitPages{
+public class SellPage extends Page {
 
     public SellPage() {
         super();

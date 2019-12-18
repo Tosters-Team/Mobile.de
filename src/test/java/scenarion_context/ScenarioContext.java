@@ -1,23 +1,23 @@
 package scenarion_context;
 
 import gherkin.ast.Scenario;
-import pageObjects.InitPages;
+import pageObjects.Page;
 
 public class ScenarioContext {
 
     private static ScenarioContext instance = null;
 
-    private InitPages currentPage;
+    private Page currentPage;
     private Scenario scenario;
 
     public ScenarioContext() {
     }
 
-    public void setCurrentPage(InitPages currentPage) {
+    public void setCurrentPage(Page currentPage) {
         this.currentPage = currentPage;
     }
 
-    public InitPages getCurrentPage() {
+    public Page getCurrentPage() {
         return currentPage;
     }
 

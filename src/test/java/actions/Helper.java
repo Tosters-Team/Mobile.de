@@ -1,17 +1,15 @@
-package methods;
+package actions;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import pageObjects.CarListPage;
-import pageObjects.InitPages;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Random;
 
-import static pageObjects.InitPages.clickOnWebElement;
-import static pageObjects.InitPages.waitUntilVisible;
+import static actions.CommonActions.clickOnWebElement;
+import static actions.CommonActions.waitUntilVisible;
+
 
 public class Helper {
 
@@ -32,12 +30,28 @@ public class Helper {
 
     public static void getParkRandomCars(List<WebElement> webElements, List<WebElement> carIsParked, int amount) {
         Random randomNumber = new Random();
-        InitPages.waitUntilVisible(webElements.get(webElements.size()-1));
+        waitUntilVisible(webElements.get(webElements.size() - 1));
         for (int i = 1; i <= amount; i++) {
             int parkRandomCar = randomNumber.nextInt(webElements.size());
             clickOnWebElement(webElements.get(parkRandomCar));
             waitUntilVisible(carIsParked.get(parkRandomCar));
             webElements.remove(parkRandomCar);
         }
+    }
+
+    public static int getPriceForComparison(String price) {
+        int priceInt = Integer.parseInt(price);
+        return priceInt;
+    }
+
+    public static int getYearForComparison(String year) {
+        int yearInt = Integer.parseInt(year);
+        return yearInt;
+    }
+
+    public static int getMileageForComparisson(String mileage) {
+        System.out.println("V init pageah problema");
+        int mileageInt = Integer.parseInt(mileage);
+        return mileageInt;
     }
 }

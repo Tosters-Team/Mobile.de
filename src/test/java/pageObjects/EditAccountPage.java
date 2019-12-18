@@ -2,8 +2,11 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
+
 @PageName(name = "Edit Account Page")
-public class EditAccountPage extends InitPages {
+public class EditAccountPage extends Page {
 
     public EditAccountPage() {
         super();
