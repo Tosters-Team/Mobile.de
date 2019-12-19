@@ -2,10 +2,9 @@
 Feature: Demo feature
 
   Background: Mobile de is opened
-    Given User is on 'Home Page'
-    And User clicks on 'Drop-down language'
+    Given User clicks on 'Language selector drop-down' on 'Header'
     And User clicks on 'English language option'
-    Then 'Home Page' is in English
+    Then User is on 'Home Page'
 
 
   Scenario: Validate parking to My Car Park functionality
