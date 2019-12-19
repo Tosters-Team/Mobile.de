@@ -32,11 +32,11 @@ public class Action {
 
 
     public static void waitUntilVisible(WebElement webElement) {
-        waiter.until(ExpectedConditions.visibilityOf(webElement));
+//        waiter.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public static void waitUntilClickable(WebElement webElement) {
-        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
+//        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     public static boolean webElementContainsText(String text, WebElement webElement) {

@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
-@PageName(name = "Home Page Quick Search")
+@PageName(name = "Home Page")
 public class HomePageQuickSearch extends Page {
 
 
@@ -38,7 +38,7 @@ public class HomePageQuickSearch extends Page {
     @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
     private WebElement sellTab;
 
-    @WebElementName(name = "Search Button")
+    @WebElementName(name = "Search button")
     @FindBy(xpath = "//*[@id=\"qssub\"]")
     private WebElement searchButton;
 
