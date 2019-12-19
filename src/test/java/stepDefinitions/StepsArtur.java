@@ -1,27 +1,27 @@
-//package stepDefinitions;
-//
-//import cucumber.api.java.en.And;
-//import cucumber.api.java.en.Given;
-//import cucumber.api.java.en.Then;
-//import cucumber.api.java.en.When;
-//import actions.Helper;
-//import org.junit.Assert;
-//import pageObjects.*;
-//import utils.ScreenShotUtil;
-//
-//
-//import static utils.PropertyConfigurator.getProperty;
-//
-//public class StepsArtur {
-//
-//
-//    private HeaderGeneral headerGeneral = new HeaderGeneral();
-//    private HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch();
-//    private LoginPage loginPage = new LoginPage();
-//    private QuickTruckSearch quickTruckSearch = new QuickTruckSearch();
-//    private EditAccountPage editAccountPage = new EditAccountPage();
-//    private CarListPage carListPage = new CarListPage();
-//
+package stepDefinitions;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import actions.Helper;
+import org.junit.Assert;
+import pageObjects.*;
+import utils.ScreenShotUtil;
+
+
+import static utils.PropertyConfigurator.getProperty;
+
+public class StepsArtur {
+
+
+    private HeaderGeneral headerGeneral = new HeaderGeneral();
+    private HomePageQuickSearch homePageQuickSearch = new HomePageQuickSearch();
+    private LoginPage loginPage = new LoginPage();
+    private QuickTruckSearch quickTruckSearch = new QuickTruckSearch();
+    private EditAccountPage editAccountPage = new EditAccountPage();
+    private CarListPage carListPage = new CarListPage();
+
 //    @Given("Mobile de is opened and language changed to English")
 //    public void mobileDeIsOpenedAndLanguageChangedToEnglish() throws Exception {
 //        Page.clickOnWebElement(headerGeneral.getGermanLanguage());
@@ -29,7 +29,7 @@
 //        Page.webElementContainsText("Biggest Vehicle Marketplace Online", headerGeneral.getTextOnHeader());
 //        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
 //    }
-//
+
 //    @When("User selects (.*) in Make drop-down")
 //    public void UserSelectsMakeInMakeDropDown(String make) throws Exception {
 //        Page.clickOnWebElement(homePageQuickSearch.getWebElementByName(make));
@@ -188,5 +188,5 @@
 //        Page.sendKeys(loginPage.getPasswordField(), getProperty("PASSWORD"));
 //        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
 //    }
-//
-//}
+
+}
