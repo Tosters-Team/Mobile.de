@@ -10,7 +10,7 @@ public class ScenarioContext {
     private Page currentPage;
     private Scenario scenario;
 
-    public ScenarioContext() {
+    private ScenarioContext() {
     }
 
     public void setCurrentPage(Page currentPage) {

@@ -20,26 +20,26 @@ public class CommonActions {
             .ignoring(StaleElementReferenceException.class);
 
     public static void clickOnWebElement(WebElement webElement) {
-        waiter.until(ExpectedConditions.visibilityOf(webElement));
-        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
+//        waiter.until(ExpectedConditions.visibilityOf(webElement));
+//        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
         webElement.click();
     }
 
     public static void sendKeys(WebElement field, String inputData) {
-        waiter.until(ExpectedConditions.visibilityOf(field));
-        waiter.until(ExpectedConditions.elementToBeClickable(field));
+//        waiter.until(ExpectedConditions.visibilityOf(field));
+//        waiter.until(ExpectedConditions.elementToBeClickable(field));
         field.clear();
         field.sendKeys(inputData);
     }
 
     public static void sendKeysWithOutClearField(WebElement field, String inputData) {
-        waiter.until(ExpectedConditions.visibilityOf(field));
-        waiter.until(ExpectedConditions.elementToBeClickable(field));
+//        waiter.until(ExpectedConditions.visibilityOf(field));
+//        waiter.until(ExpectedConditions.elementToBeClickable(field));
         field.sendKeys(inputData);
     }
 
     public static void waitUntilVisible(WebElement webElement) {
-        waiter.until(ExpectedConditions.visibilityOf(webElement));
+//        waiter.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public static boolean webElementContainsText(String text, WebElement webElement) {

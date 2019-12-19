@@ -20,7 +20,7 @@ public abstract class Page {
         return webElement;
     }
 
-    @WebElementName(name = "[Login Button]")
+    @WebElementName(name = "Login button")
     @FindBy(xpath = "//*[@id=\"hdmylogin\"]/span")
     protected WebElement loginButton;
 
@@ -35,7 +35,7 @@ public abstract class Page {
     @FindBy(xpath = "//*[@id=\"hdmyacc\"]")
     protected WebElement editAccountOption;
 
-    @WebElementName(name = "My Car Park button")
+    @WebElementName(name = "My car park button")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
     protected WebElement myCarParkButton;
 
@@ -45,15 +45,18 @@ public abstract class Page {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[1]/a/span")
     protected WebElement showMySearches;
 
+    @WebElementName(name = "Logo")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     protected WebElement logoHomePageButton;
 
+    @WebElementName(name = "Language selector drop-down")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]")
-    protected WebElement germanLanguage;
+    protected WebElement languageDropDown;
 
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/span/span")
     protected WebElement textOnHeader;
 
+    @WebElementName(name = "English language option")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]/ul/li[1]")
     protected WebElement englishLanguage;
 
@@ -100,8 +103,8 @@ public abstract class Page {
         return logoHomePageButton;
     }
 
-    public WebElement getGermanLanguage() {
-        return germanLanguage;
+    public WebElement getLanguageDropDown() {
+        return languageDropDown;
     }
 
     public WebElement getEnglishLanguage() {
