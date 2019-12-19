@@ -1,19 +1,24 @@
 package utils;
 
 import org.openqa.selenium.WebElement;
+import org.reflections.Reflections;
 import pageObjects.Page;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Set;
 
 
 public class Reflection {
 
+
     public static WebElement getWebElementByName(Page page, String name) {
 
-        for (Field field : page.getClass().getDeclaredFields()) {
-            if (field.getAnnotation(WebElementName.class).name().equals(name)) {
+        Field[] fields = page.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(WebElementName.class) && field.getAnnotation(WebElementName.class).name().equals(name)) {
                 try {
                     field.setAccessible(true);
                     return (WebElement) field.get(page);
@@ -25,16 +30,28 @@ public class Reflection {
         return null;
     }
 
+
     public static Page getPageByName(String pageName) {
-        for (Class clazz : Page.class.getClasses()) {
-            if (clazz.getAnnotation(PageName.class).equals(pageName)) {
+
+        Reflections reflections = new Reflections("pageObjects");
+        Set<Class<? extends Page>> classSet = reflections.getSubTypesOf(Page.class);
+        for (Class<? extends Page> cl : classSet)
+            if (cl.getAnnotation(PageName.class).name().equals(pageName)) {
                 try {
-                    return Page.class.newInstance();
-                } catch (InstantiationException | IllegalAccessException e) {
+                    return cl.getConstructor().newInstance();
+                } catch (InstantiationException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
-        }
         return null;
     }
+
+
 }
+
+
+
+
+
+
+
