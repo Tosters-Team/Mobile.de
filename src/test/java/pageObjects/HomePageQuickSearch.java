@@ -62,7 +62,7 @@ public class HomePageQuickSearch extends Page {
     @FindBy(xpath = "//*[@id=\"qsmakeBuy\"]/option[3]")
     private WebElement makeVolkswagen;
 
-    @WebElementName(name = "5 Series")
+    @WebElementName(name = "5")
     @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[65]")
     private WebElement modelFiveSeriesBmw;
 
@@ -70,16 +70,15 @@ public class HomePageQuickSearch extends Page {
     @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[16]")
     private WebElement modelGolf;
 
-    @WebElementName(name = "E Class")
+    @WebElementName(name = "E")
     @FindBy(xpath = "//*[@id=\"qsmodelBuy\"]/option[142]")
     private WebElement modelEClassMercedes;
 
+    @WebElementName(name = "Price field")
     @FindBy(xpath = "//*[@id=\"qsprc\"]")
     private WebElement priceUpTo;
 
-    @WebElementName(name = "test")
-    @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
-    private WebElement test;
+
 
     public WebElement getSellTab() {
         return sellTab;

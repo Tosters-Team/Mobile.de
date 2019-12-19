@@ -20,9 +20,11 @@ public class CarListPage extends Page {
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]/a/div/div[2]/div[3]/div/div[2]/div/div[1]")
     private List<WebElement> statusParked;
 
+    @WebElementName(name = "List of prices")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]/a/div/div[2]/div[1]/div[2]/div[1]/span[1]")
     private List<WebElement> listPrices;
 
+    @WebElementName(name = "List of announcements")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]/a/div/div[2]/div[1]/div[1]/div")
     private List<WebElement> listAnnouncement;
 
