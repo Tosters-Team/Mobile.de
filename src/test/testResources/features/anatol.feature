@@ -51,7 +51,7 @@ Feature: Demo feature
     And User clicks on 'My car park button' on 'Header'
     And User is on 'Car Park Page'
     When User clicks on 'Note button'
-    And User provides <text> in 'Note field'
+    And User provides '<text>' in 'Note field'
     And User clicks on 'Note button'
     And User clicks on 'Note button'
     Then the same <text> is displayed

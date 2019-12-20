@@ -50,40 +50,39 @@ public class CarParkPage extends Page {
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[3]/button")
     private List<WebElement> deleteCarButtons;
 
-    public List<WebElement> getDeleteCarButtons() {
-        return deleteCarButtons;
-    }
-
-    public WebElement getInformativeMessage() {
-        return informativeMessage;
-    }
-
-    public WebElement getAmountOfCars() {
-        return amountOfCars;
-    }
-
-    public List<WebElement> getUndoCarButtons() {
-        return undoCarButtons;
-    }
-
-    public List<WebElement> getRemoveCarButtons() {
-        return removeCarButtons;
-    }
-
-    public WebElement getFirstAddNoteField() {
-        return firstAddNoteField;
-    }
-
-    public WebElement getFirstNoteButton() {
-        return firstNoteButton;
+    public List<WebElement> getCompareCheckBoxes() {
+        return compareCheckBoxes;
     }
 
     public WebElement getRunComparisonButton() {
         return runComparisonButton;
     }
 
-    public List<WebElement> getCompareCheckBoxes() {
-        return compareCheckBoxes;
+    public WebElement getFirstNoteButton() {
+        return firstNoteButton;
     }
 
+    public WebElement getFirstAddNoteField() {
+        return firstAddNoteField;
+    }
+
+    public List<WebElement> getRemoveCarButtons() {
+        return removeCarButtons;
+    }
+
+    public List<WebElement> getUndoCarButtons() {
+        return undoCarButtons;
+    }
+
+    public WebElement getAmountOfCars() {
+        return amountOfCars;
+    }
+
+    public WebElement getInformativeMessage() {
+        return informativeMessage;
+    }
+
+    public List<WebElement> getDeleteCarButtons() {
+        return deleteCarButtons;
+    }
 }
