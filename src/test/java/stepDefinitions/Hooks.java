@@ -9,7 +9,7 @@ import utils.Log;
 import utils.driverFactory.DriverFactory;
 import utils.driverFactory.DriverManager;
 
-import static utils.PropertyConfigurator.*;
+import static utils.PropertyConfigurator.getProperty;
 
 
 public class Hooks {

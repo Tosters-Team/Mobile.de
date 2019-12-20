@@ -81,5 +81,3 @@ Feature: Demo feature
       | Jackie | Chan   | ChinaTown        | 22          | 12345   | Hong Kong     |
       | John   | Rambo  | Rambo's str.     | 33          | 23456   | Bowie Arizona |
       | Steven | Seagal | BrokenBones str. | 44          | 34567   | LosAngeles    |
-
-

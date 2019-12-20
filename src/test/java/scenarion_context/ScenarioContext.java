@@ -11,7 +11,7 @@ public class ScenarioContext {
 
     private static ScenarioContext instance = null;
 
-    private Page currentPage;
+    private static Page currentPage;
     private Scenario scenario;
     private static WebElement webElement;
 
@@ -42,12 +42,6 @@ public class ScenarioContext {
         return currentPage;
     }
 
-    public WebElement getWebElement() {
-        return webElement;
-    }
-    public void setWebElement(WebElement webElement) {
-        ScenarioContext.webElement = webElement;
-    }
 
     public void setScenario(Scenario scenario) {
         this.scenario = scenario;

@@ -8,7 +8,7 @@ Feature: Mobile de search function
   Scenario Outline: Validate side panel search functionality on car list page
     Given User clicks on 'Search button' on 'Home Page'
     And User is on 'Side Panel Search Page'
-    When User provides <option> in <option_type>
+    When User inserts value '<option>' in '<option_type>'
     And User clicks on 'Show offers'
     Then the selected <option> matches the 'Displayed option'
     When User clicks on 'Close displayed option'

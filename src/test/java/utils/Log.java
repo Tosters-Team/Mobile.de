@@ -9,13 +9,13 @@ public class Log {
 
     // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
 
-    public static void startTestCase(String sTestCaseName){
+    public static void startTestCase(String sTestCaseName) {
 
         Log.info("****************************************************************************************");
 
         Log.info("****************************************************************************************");
 
-        Log.info("$$$$$$$$$$$$$$$$$$$$$                 "+sTestCaseName+ "       $$$$$$$$$$$$$$$$$$$$$$$$$");
+        Log.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
 
         Log.info("****************************************************************************************");
 
@@ -25,9 +25,9 @@ public class Log {
 
     //This is to print log for the ending of the test case
 
-    public static void endTestCase(String sTestCaseName){
+    public static void endTestCase(String sTestCaseName) {
 
-        Log.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
+        Log.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
 
         Log.info("X");
 

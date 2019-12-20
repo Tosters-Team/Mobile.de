@@ -3,9 +3,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions( features = "src/test/testResources/features",
-                  glue = "stepDefinitions")
+@CucumberOptions(features = "src/test/testResources/features",
+        glue = "stepDefinitions")
 public class Runner {
-
-
 }

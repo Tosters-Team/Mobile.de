@@ -56,19 +56,4 @@ public class Reflection {
             }
         return null;
     }
-
-    public static List<WebElement> getListOfWebElements(Page page, String name) {
-        Field[] fields = page.getClass().getDeclaredFields();
-        for (Field field : fields) {
-            if (field.isAnnotationPresent(WebElementName.class) && field.getAnnotation(WebElementName.class).name().equals(name)) {
-                try {
-                    field.setAccessible(true);
-                    return (List<WebElement>) field.get(page);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return null;
-    }
 }
