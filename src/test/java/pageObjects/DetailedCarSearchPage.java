@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
 
 @PageName(name = "Detailed Car Search Page")
 public class DetailedCarSearchPage extends Page {
@@ -15,24 +16,30 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"form-dsp\"]/div[1]/div/article/section/div/div[1]/h1")
     private WebElement pageHeader;
 
+    @WebElementName(name = "NEW")
     @FindBy(xpath = "//*[@id=\"usage-NEW-ds\"]")
     private WebElement conditionNew;
 
+    @WebElementName(name = "USED")
     @FindBy(xpath = "//*[@id=\"usage-USED-ds\"]")
     private WebElement conditionUsed;
 
+    @WebElementName(name = "Make field")
     @FindBy(xpath = "//*[@id=\"selectMake1-ds\"]")
     private WebElement make;
 
+    @WebElementName(name = "Model field")
     @FindBy(xpath = "//*[@id=\"selectModel1-ds\"]")
     private WebElement model;
 
     @FindBy(xpath = "//*[@id=\"categories-Cabrio-ds\"]")
     private WebElement vehicleTypeCabriolet;
 
+    @WebElementName(name = "ESTATE")
     @FindBy(xpath = "//*[@id=\"categories-EstateCar-ds\"]")
     private WebElement vehicleTypeEstate;
 
+    @WebElementName(name = "SALOON")
     @FindBy(xpath = "//*[@id=\"categories-Limousine-ds\"]")
     private WebElement vehicleTypeSaloon;
 
@@ -48,21 +55,27 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"categories-Van-ds\"]")
     private WebElement veicleTypeVan;
 
+    @WebElementName(name = "Min price field")
     @FindBy(xpath = "//*[@id=\"minPrice\"]")
     private WebElement priceFrom;
 
+    @WebElementName(name = "Max price field")
     @FindBy(xpath = "//*[@id=\"maxPrice\"]")
     private WebElement priceTo;
 
+    @WebElementName(name = "Min year field")
     @FindBy(xpath = "//*[@id=\"minFirstRegistrationDate\"]")
     private WebElement firstRegistrationFrom;
 
+    @WebElementName(name = "Max year field")
     @FindBy(xpath = "//*[@id=\"maxFirstRegistrationDate\"]")
     private WebElement firstRegistrationTo;
 
+    @WebElementName(name = "Min mileage field")
     @FindBy(xpath = "//*[@id=\"minMileage\"]")
     private WebElement kilometerFrom;
 
+    @WebElementName(name = "Max mileage field")
     @FindBy(xpath = "//*[@id=\"maxMileage\"]")
     private WebElement kilometerTo;
 
@@ -72,15 +85,19 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"maxPowerAsArray\"]")
     private WebElement powerTo;
 
+    @WebElementName(name = "PETROL")
     @FindBy(xpath = "//*[@id=\"fuels-PETROL-ds\"]")
     private WebElement fuelTypePetrol;
 
+    @WebElementName(name = "DIESEL")
     @FindBy(xpath = "//*[@id=\"fuels-DIESEL-ds\"]")
     private WebElement fuelTypeDiesel;
 
+    @WebElementName(name = "MANUAL")
     @FindBy(xpath = "//*[@id=\"transmissions-MANUAL_GEAR-ds\"]")
     private WebElement transmissionTypeManual;
 
+    @WebElementName(name = "AUTOMATIC")
     @FindBy(xpath = "//*[@id=\"transmissions-SEMIAUTOMATIC_GEAR-ds\"]")
     private WebElement transmissionTypeSemiAuto;
 
@@ -93,6 +110,7 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"maxCubicCapacity\"]")
     private WebElement cubicCapacityTo;
 
+    @WebElementName(name = "Show offers button")
     @FindBy(xpath = "//*[@id=\"dsp-upper-search-btn\"]")
     private WebElement showOffersButton;
 

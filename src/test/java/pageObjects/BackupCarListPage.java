@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
+import pageObjects.annotations.WebElementName;
 
 import java.util.List;
 import java.util.Random;
@@ -13,12 +14,14 @@ public class BackupCarListPage extends Page {
         super();
     }
 
+    @WebElementName(name = "Sorting options drop-down")
     @FindBy(xpath = "//*[@id=\"so-sb\"]")
     private WebElement sortingDropDown;
 
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[1]/h1")
     private WebElement headerMessage;
 
+    @WebElementName(name = "Car results")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]")
     private List<WebElement> carResults;
 

@@ -42,7 +42,7 @@ public class HomePageQuickSearch extends Page {
     @FindBy(xpath = "//*[@id=\"qssub\"]")
     private WebElement searchButton;
 
-    @WebElementName(name = "Detailed Search link")
+    @WebElementName(name = "Detailed search link")
     @FindBy(xpath = "//*[@id=\"qsdet\"]")
     private WebElement detailedSearch;
 
