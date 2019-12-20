@@ -1,14 +1,14 @@
 package pageObjects;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
 import java.util.List;
-@Getter @Setter
+@Getter
+
 @PageName(name = "Car Park Page")
 public class CarParkPage extends Page {
 
@@ -52,39 +52,4 @@ public class CarParkPage extends Page {
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[3]/button")
     private List<WebElement> deleteCarButtons;
 
-    public List<WebElement> getCompareCheckBoxes() {
-        return compareCheckBoxes;
-    }
-
-    public WebElement getRunComparisonButton() {
-        return runComparisonButton;
-    }
-
-    public WebElement getFirstNoteButton() {
-        return firstNoteButton;
-    }
-
-    public WebElement getFirstAddNoteField() {
-        return firstAddNoteField;
-    }
-
-    public List<WebElement> getRemoveCarButtons() {
-        return removeCarButtons;
-    }
-
-    public List<WebElement> getUndoCarButtons() {
-        return undoCarButtons;
-    }
-
-    public WebElement getAmountOfCars() {
-        return amountOfCars;
-    }
-
-    public WebElement getInformativeMessage() {
-        return informativeMessage;
-    }
-
-    public List<WebElement> getDeleteCarButtons() {
-        return deleteCarButtons;
-    }
 }

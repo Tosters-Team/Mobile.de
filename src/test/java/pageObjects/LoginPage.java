@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "Login Page")
 public class LoginPage extends Page {
@@ -33,23 +36,6 @@ public class LoginPage extends Page {
     @FindBy(xpath = "//*[@id=\"container\"]/div[1]/div/div/div/span")
     private WebElement notValidCredentials;
 
-    public WebElement getEmailField() {
-        return eMailField;
-    }
-
-    public WebElement getLoginPage() {
-        return loginPage;
-    }
-
-    public WebElement getPasswordField() {
-        return passwordField;
-    }
-
-    public WebElement getLoginButton() {
-        return loginButton;
-    }
-
-    public WebElement getNotValidCredentials() {
-        return notValidCredentials;
-    }
 }
+
+

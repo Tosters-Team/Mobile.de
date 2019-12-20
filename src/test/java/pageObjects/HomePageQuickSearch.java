@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "Home Page")
 public class HomePageQuickSearch extends Page {
@@ -56,49 +59,4 @@ public class HomePageQuickSearch extends Page {
     @FindBy(xpath = "//*[@id=\"qsprc\"]")
     private WebElement priceUpTo;
 
-
-
-    public WebElement getSellTab() {
-        return sellTab;
-    }
-
-    public WebElement getSearchButton() {
-        return searchButton;
-    }
-
-    public WebElement getDetailedSearch() {
-        return detailedSearch;
-    }
-
-    public WebElement getTruckTab() {
-        return truckTab;
-    }
-
-    public WebElement getMakeBmw() {
-        return makeBmw;
-    }
-
-    public WebElement getMakeMercedes() {
-        return makeMercedes;
-    }
-
-    public WebElement getMakeVolkswagen() {
-        return makeVolkswagen;
-    }
-
-    public WebElement getModelFiveSeriesBmw() {
-        return modelFiveSeriesBmw;
-    }
-
-    public WebElement getModelGolf() {
-        return modelGolf;
-    }
-
-    public WebElement getModelEClassMercedes() {
-        return modelEClassMercedes;
-    }
-
-    public WebElement getPriceUpTo() {
-        return priceUpTo;
-    }
 }

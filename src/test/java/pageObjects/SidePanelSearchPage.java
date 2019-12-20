@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "Side Panel Search Page")
 public class SidePanelSearchPage extends Page {
@@ -83,70 +86,5 @@ public class SidePanelSearchPage extends Page {
             case "Kilometer_to"      : return kilometerTo;
             default: return  null;
         }
-    }
-
-
-    public WebElement getVehicleConditionChange() {
-        return vehicleConditionChange;
-    }
-
-    public WebElement getVehicleConditionUsed() {
-        return vehicleConditionUsed;
-    }
-
-    public WebElement getShowOffersOnConditionButton() {
-        return showOffersOnConditionButton;
-    }
-
-    public WebElement getMakeModelChange() {
-        return makeModelChange;
-    }
-
-    public WebElement getMake() {
-        return make;
-    }
-
-    public WebElement getModel() {
-        return model;
-    }
-
-    public WebElement getShowOffersOnMakeModelButton() {
-        return showOffersOnMakeModelButton;
-    }
-
-    public WebElement getPriceFrom() {
-        return priceFrom;
-    }
-
-    public WebElement getPriceTo() {
-        return priceTo;
-    }
-
-    public WebElement getFirstRegistrationFrom() {
-        return firstRegistrationFrom;
-    }
-
-    public WebElement getFirstRegistrationTo() {
-        return firstRegistrationTo;
-    }
-
-    public WebElement getKilometerFrom() {
-        return kilometerFrom;
-    }
-
-    public WebElement getKilometerTo() {
-        return kilometerTo;
-    }
-
-    public WebElement getShowOffersGeneralButton() {
-        return showOffersGeneralButton;
-    }
-
-    public WebElement getDisplayedOption() {
-        return displayedOption;
-    }
-
-    public WebElement getCloseDisplayedOption() {
-        return closeDisplayedOption;
     }
 }
