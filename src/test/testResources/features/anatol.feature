@@ -4,51 +4,72 @@ Feature: Demo feature
   Background: Mobile de is opened
     Given User clicks on 'Language selector drop-down' on 'Header'
     And User clicks on 'English language option'
-    Then User is on 'Home Page'
 
 
   Scenario: Validate parking to My Car Park functionality
     Given User is logged in Mobile de
-    And User is on 'Home page'
+    And User is on 'Home Page'
     And User clicks on 'Search button'
+    And User is on 'Car List Page'
     When User clicks on 2 random 'Park button'
-    And User clicks on 'My car park button'
+    And User clicks on 'My car park button' on 'Header'
     Then User is on 'Car Park Page'
-    And Added cars are displayed
+    And  Cars are displayed
 
-#  Scenario: Validate restoring cars functionality on My Car Park page
-#    Given user is logged in Mobile de and search button was clicked
-#    And  1 random car from list was parked
-#    And  car park button was clicked
-#    When user clicks on remove button
-#    Then removed car disappears and undo button is displayed
-#    When user clicks on undo button
-#    Then removed car is restored
-#
-#  Scenario: Validate Removing functionality on My Car Park page
-#    Given user is logged in Mobile de and search button was clicked
-#    And  1 random car from list was parked
-#    And  car park button was clicked
-#    When user clicks on remove button
-#    And  user click on delete button
-#    Then message "You have no vehicles in your car park yet" is displayed
-#
-#  Scenario Outline: Validate Add Note functionality
-#    Given user is logged in Mobile de and search button was clicked
-#    And 1 random car from list was parked
-#    And car park button was clicked
-#    When click on add note button under car and enter <text> in field
-#    And click on hide note button and click show note button
-#    Then the same <text> is displayed
-#    Examples:
-#      | text           |
-#      | Text           |
-#      | Some Text      |
-#      | Add Note Field |
-#
-#  Scenario: Validate Compare functionality on My Car Park page Compare these cars
-#    Given user is logged in Mobile de and search button was clicked
-#    And 2 random car from list was parked
-#    And car park button was clicked
-#    When click on compare checkboxes under cars and click on run comparison button
-#    Then comparison page with cars is displayed
+
+  Scenario: Validate Removing functionality on My Car Park page
+    Given User is logged in Mobile de
+    And User is on 'Home Page'
+    And User clicks on 'Search button'
+    And User is on 'Car List Page'
+    And User clicks on 2 random 'Park button'
+    And User clicks on 'My car park button' on 'Header'
+    And User is on 'Car Park Page'
+    When User clicks on all 'Remove buttons'
+    And User clicks on all 'X buttons'
+    Then 'You have no vehicles in your car park yet' message is displayed
+
+  Scenario: Validate restoring cars functionality on My Car Park page
+    Given User is logged in Mobile de
+    And User is on 'Home Page'
+    And User clicks on 'Search button'
+    And User is on 'Car List Page'
+    And User clicks on 2 random 'Park button'
+    And User clicks on 'My car park button' on 'Header'
+    And User is on 'Car Park Page'
+    When User clicks on all 'Remove buttons'
+    And User clicks on all 'Undo buttons'
+    Then Cars are displayed
+
+
+  Scenario Outline: Validate Add Note functionality
+    Given User is logged in Mobile de
+    And User is on 'Home Page'
+    And User clicks on 'Search button'
+    And User is on 'Car List Page'
+    And User clicks on 1 random 'Park button'
+    And User clicks on 'My car park button' on 'Header'
+    And User is on 'Car Park Page'
+    When User clicks on 'Note button'
+    And User provides '<text>' in 'Note field'
+    And User clicks on 'Note button'
+    And User clicks on 'Note button'
+    Then the same <text> is displayed
+    Examples:
+      | text           |
+      | Text           |
+      | Some Text      |
+      | Add Note Field |
+
+  Scenario: Validate Compare functionality on My Car Park page Compare these cars
+    Given User is logged in Mobile de
+    And User is on 'Home Page'
+    And User clicks on 'Search button'
+    And User is on 'Car List Page'
+    And User clicks on 2 random 'Park button'
+    And User clicks on 'My car park button' on 'Header'
+    And User is on 'Car Park Page'
+    When User clicks on all 'Compare checkboxes'
+    And User clicks on 'Run comparison button'
+    Then User is on 'Comparison Page'
+    And 'Comparison table' is displayed

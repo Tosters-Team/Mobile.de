@@ -56,4 +56,51 @@ public class HeaderGeneral extends Page {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     private WebElement mobileDeLogo;
 
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getMyMobileDeDropDown() {
+        return myMobileDeDropDown;
+    }
+
+    public WebElement getLogoutOption() {
+        return logoutOption;
+    }
+
+    public WebElement getEditAccountOption() {
+        return editAccountOption;
+    }
+
+    public WebElement getMyCarParkButton() {
+        return myCarParkButton;
+    }
+
+    public WebElement getMySearchesButton() {
+        return mySearchesButton;
+    }
+
+    public WebElement getShowMySearches() {
+        return showMySearches;
+    }
+
+    public WebElement getLogoHomePageButton() {
+        return logoHomePageButton;
+    }
+
+    public WebElement getLanguageDropDown() {
+        return languageDropDown;
+    }
+
+    public WebElement getTextOnHeader() {
+        return textOnHeader;
+    }
+
+    public WebElement getEnglishLanguage() {
+        return englishLanguage;
+    }
+
+    public WebElement getMobileDeLogo() {
+        return mobileDeLogo;
+    }
 }

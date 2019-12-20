@@ -34,9 +34,8 @@ public class ScenarioContext {
     }
 
     public void setCurrentPage(Page currentPage) {
-        this.currentPage = currentPage;
+        ScenarioContext.currentPage = currentPage;
         PageFactory.initElements(driver, currentPage);
-
     }
 
     public Page getCurrentPage() {

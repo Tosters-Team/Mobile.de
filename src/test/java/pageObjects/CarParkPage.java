@@ -14,11 +14,11 @@ public class CarParkPage extends Page {
         super();
     }
 
-    @WebElementName(name = "Compare checkbox")
+    @WebElementName(name = "Compare checkboxes")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[1]/div")
     private List<WebElement> compareCheckBoxes;
 
-    @WebElementName(name = "Run Comparison button")
+    @WebElementName(name = "Run comparison button")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/div[2]/div/div[3]")
     private WebElement runComparisonButton;
 
@@ -30,57 +30,59 @@ public class CarParkPage extends Page {
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li/div/div/div[2]/textarea")
     private WebElement firstAddNoteField;
 
-    @WebElementName(name = "Remove button")
+    @WebElementName(name = "Remove buttons")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/button[2]/span")
     private List<WebElement> removeCarButtons;
 
-    @WebElementName(name = "Undo button")
+    @WebElementName(name = "Undo buttons")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[1]/button/span")
     private List<WebElement> undoCarButtons;
 
+    @WebElementName(name = "Amount of cars")
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/h1/span[2]")
     private WebElement amountOfCars;
 
+    @WebElementName(name = "You have no vehicles in your car park yet")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/h2/span")
     private WebElement informativeMessage;
 
+    @WebElementName(name = "X buttons")
     @FindBy(xpath = "//*[@id=\"parkingsListContainer\"]/div/div/ul/li[*]/div/div/div/div[3]/button")
     private List<WebElement> deleteCarButtons;
 
-    public List<WebElement> getDeleteCarButtons() {
-        return deleteCarButtons;
-    }
-
-    public WebElement getInformativeMessage() {
-        return informativeMessage;
-    }
-
-    public WebElement getAmountOfCars() {
-        return amountOfCars;
-    }
-
-    public List<WebElement> getUndoCarButtons() {
-        return undoCarButtons;
-    }
-
-    public List<WebElement> getRemoveCarButtons() {
-        return removeCarButtons;
-    }
-
-    public WebElement getFirstAddNoteField() {
-        return firstAddNoteField;
-    }
-
-    public WebElement getFirstNoteButton() {
-        return firstNoteButton;
+    public List<WebElement> getCompareCheckBoxes() {
+        return compareCheckBoxes;
     }
 
     public WebElement getRunComparisonButton() {
         return runComparisonButton;
     }
 
-    public List<WebElement> getCompareCheckBoxes() {
-        return compareCheckBoxes;
+    public WebElement getFirstNoteButton() {
+        return firstNoteButton;
     }
 
+    public WebElement getFirstAddNoteField() {
+        return firstAddNoteField;
+    }
+
+    public List<WebElement> getRemoveCarButtons() {
+        return removeCarButtons;
+    }
+
+    public List<WebElement> getUndoCarButtons() {
+        return undoCarButtons;
+    }
+
+    public WebElement getAmountOfCars() {
+        return amountOfCars;
+    }
+
+    public WebElement getInformativeMessage() {
+        return informativeMessage;
+    }
+
+    public List<WebElement> getDeleteCarButtons() {
+        return deleteCarButtons;
+    }
 }
