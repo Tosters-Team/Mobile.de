@@ -1,12 +1,14 @@
 package pageObjects;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
 import java.util.List;
-
+@Getter @Setter
 @PageName(name = "Car Park Page")
 public class CarParkPage extends Page {
 

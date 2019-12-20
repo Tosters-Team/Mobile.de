@@ -1,5 +1,7 @@
 package pageObjects;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
@@ -7,6 +9,8 @@ import pageObjects.annotations.WebElementName;
 
 import java.util.List;
 import java.util.Random;
+
+@Getter @Setter
 @PageName(name = "Backup Car List Page")
 public class BackupCarListPage extends Page {
 
@@ -60,18 +64,6 @@ public class BackupCarListPage extends Page {
 
     public WebElement getLastCarOnPage() {
         return carResults.get(23);
-    }
-
-    public WebElement getSaveSearchButton() {
-        return saveSearchButton;
-    }
-
-    public WebElement getEmailNotificationCheckBox() {
-        return emailNotificationCheckBox;
-    }
-
-    public WebElement getSaveSearchOnPopUp() {
-        return saveSearchOnPopUp;
     }
 
     public WebElement getSavedSearchFilter(int filterIndex) {

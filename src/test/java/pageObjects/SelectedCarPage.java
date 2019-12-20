@@ -39,12 +39,12 @@ public class SelectedCarPage extends Page {
     private WebElement transmission;
 
     public int getActualPrice() {
-        int priceInt = Integer.parseInt(price.getText().substring(1).replaceAll(",",""));
+        int priceInt = Integer.parseInt(price.getText().substring(1).replaceAll(",", ""));
         return priceInt;
     }
 
     public int getActualMileage() {
-        int mileageInt = Integer.parseInt(mileage.getText().replaceAll("[^\\d.]", "").replace(".",""));
+        int mileageInt = Integer.parseInt(mileage.getText().replaceAll("[^\\d.]", "").replace(".", ""));
         System.out.println(mileage.getText());
         System.out.println(mileageInt);
         return mileageInt;
@@ -85,4 +85,6 @@ public class SelectedCarPage extends Page {
     public WebElement getFuel() {
         return fuel;
     }
+
+
 }
