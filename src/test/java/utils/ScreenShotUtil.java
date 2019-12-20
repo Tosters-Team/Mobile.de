@@ -1,5 +1,6 @@
 package utils;
 
+import cucumber.api.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,20 +13,24 @@ import java.util.Date;
 import static utils.PropertyConfigurator.getProperty;
 
 public class ScreenShotUtil {
+    private static Scenario scenario;
+
+    public static void setScenario(Scenario scenario) {
+        ScreenShotUtil.scenario = scenario;
+    }
 
     public static void takeScreenShot(String fileName) throws Exception {
 
         TakesScreenshot scrShot = ((TakesScreenshot) Hooks.driver);
-        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-        File DestFile = new File(
+        byte [] srcFile = scrShot.getScreenshotAs(OutputType.BYTES);
+        scenario.embed(srcFile,"image/png");
+        FileUtils.writeByteArrayToFile(new File(
                 getProperty("PATH.TO.SCREENSHOTS.FOLDER")
-                        +
-                        fileName
-                        + " " +
-                        new SimpleDateFormat(getProperty("DATE.FORMAT")
-                                +
-                                getProperty("FORMAT.OF.SCREENSHOT")).format(new Date()));
-        FileUtils.copyFile(SrcFile, DestFile);
+                        + new SimpleDateFormat(getProperty("DATE.FORMAT")
+                        + " "
+                        + fileName
+                        + getProperty("FORMAT.OF.SCREENSHOT")).format(new Date())),srcFile);
 
     }
+
 }

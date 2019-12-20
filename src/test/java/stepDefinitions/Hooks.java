@@ -6,6 +6,7 @@ import cucumber.api.java.Before;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import utils.Log;
+import utils.ScreenShotUtil;
 import utils.driverFactory.DriverFactory;
 import utils.driverFactory.DriverManager;
 
@@ -22,6 +23,7 @@ public class Hooks {
     public void before(Scenario scenario) {
         DOMConfigurator.configure("log4j.xml");
         Log.startTestCase("Testing started");
+        ScreenShotUtil.setScenario(scenario);
         currentScenario = scenario;
         driverManager = DriverFactory.getManager(getProperty("BROWSER"));
         driver = driverManager.getDriver();

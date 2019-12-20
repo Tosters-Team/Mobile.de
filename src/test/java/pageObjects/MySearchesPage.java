@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "My Searches Page")
 public class MySearchesPage extends Page {
@@ -30,15 +33,4 @@ public class MySearchesPage extends Page {
     @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div[1]/div/div[1]/a")
     private WebElement showSavedSearch;
 
-    public WebElement getDeleteSearch() {
-        return deleteSearch;
-    }
-
-    public WebElement getEmptySearch() {
-        return emptySearch;
-    }
-
-    public WebElement getShowSavedSearch() {
-        return showSavedSearch;
-    }
 }

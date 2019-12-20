@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "Edit Account Page")
 public class EditAccountPage extends Page {
@@ -52,45 +55,5 @@ public class EditAccountPage extends Page {
     @WebElementName(name = "Change address button")
     @FindBy(xpath = "//*[@id=\"app\"]//div[2]/div[2]/div/div[2]/a/span")
     private WebElement changeAddress;
-
-    public WebElement getChangeName() {
-        return changeName;
-    }
-
-    public WebElement getChangeAddress() {
-        return changeAddress;
-    }
-
-    public WebElement getStreetField() {
-        return streetField;
-    }
-
-    public WebElement getHouseNumber() {
-        return houseNumber;
-    }
-
-    public WebElement getChangedMessage() {
-        return changedMessage;
-    }
-
-    public WebElement getSaveChanging() {
-        return saveChanging;
-    }
-
-    public WebElement getZipCodeField() {
-        return zipCodeField;
-    }
-
-    public WebElement getCityField() {
-        return cityField;
-    }
-
-    public WebElement getFirstNameField() {
-        return firstNameField;
-    }
-
-    public WebElement getLastNameField() {
-        return lastNameField;
-    }
 
 }

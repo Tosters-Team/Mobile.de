@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
+
+@Getter
 
 @PageName(name = "Quick Truck Search page")
 public class QuickTruckSearch extends Page {
@@ -57,48 +60,4 @@ public class QuickTruckSearch extends Page {
     @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div[2]/div/div/div/h3")
     private WebElement quickTruckPageHeader;
 
-
-    public WebElement getQuickTruckPageHeader() {
-        return quickTruckPageHeader;
-    }
-
-    public WebElement getVansNtRucksUpTo7p5t() {
-        return vansNtRucksUpTo7p5t;
-    }
-
-    public WebElement getTrucksOver7p5t() {
-        return trucksOver7p5t;
-    }
-
-    public WebElement getSemiTrailerTruck() {
-        return semiTrailerTruck;
-    }
-
-    public WebElement getTrailersCategory() {
-        return trailersCategory;
-    }
-
-    public WebElement getSemiTrailers() {
-        return semiTrailers;
-    }
-
-    public WebElement getConstructionMachines() {
-        return constructionMachines;
-    }
-
-    public WebElement getBusesCategory() {
-        return busesCategory;
-    }
-
-    public WebElement getAgriculturalVehicles() {
-        return agriculturalVehicles;
-    }
-
-    public WebElement getForkliftTrucks() {
-        return forkliftTrucks;
-    }
-
-    public WebElement getGeneralTrucksCategoryHeader() {
-        return generalTrucksCategoryHeader;
-    }
 }
