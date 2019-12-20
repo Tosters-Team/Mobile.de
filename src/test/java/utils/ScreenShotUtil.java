@@ -2,10 +2,8 @@ package utils;
 
 import cucumber.api.Scenario;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
 import stepDefinitions.Hooks;
 
 import java.io.File;
