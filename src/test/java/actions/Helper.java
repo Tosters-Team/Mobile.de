@@ -1,6 +1,9 @@
 package actions;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import scenarion_context.ScenarioContext;
+import utils.Reflection;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -12,12 +15,40 @@ import static actions.CommonActions.waitUntilVisible;
 
 
 public class Helper {
+    private static ScenarioContext scenarioContext = ScenarioContext.getInstance();
 
-
-    public static WebElement getRandomCar(List<WebElement> list) {
+    public static void getRandomCar(List<WebElement> list) {
         Random random = new Random();
-        int randomCar = random.nextInt(list.size());
-        return list.get(randomCar);
+        int randomCar = random.nextInt((list.size()-1) - 1) + 1;
+        clickOnWebElement(list.get(randomCar));
+    }
+
+    public static void getFirstCar(List<WebElement> list) {
+        clickOnWebElement(list.get(1));
+    }
+
+    public static void getLastCar(List<WebElement> list) {
+        clickOnWebElement(list.get(23));
+    }
+
+    public static int getActualPrice(WebElement price) {
+        return Integer.parseInt(price.getText().substring(1).replaceAll(",",""));
+    }
+
+    public static int getActualMileage(WebElement mileage) {
+        return Integer.parseInt(mileage.getText().replaceAll("[^\\d.]", "").replace(".",""));
+    }
+
+    public static int getActualDate(WebElement firstRegistration) {
+        int dateInt;
+        String dateString = firstRegistration.getText();
+        String[] separatedDate = dateString.split("/");
+        StringBuilder unifiedDate = new StringBuilder();
+        unifiedDate.append(separatedDate[1]);
+        unifiedDate.append(separatedDate[0]);
+        dateInt = Integer.parseInt(unifiedDate.toString());
+        System.out.println(dateInt);
+        return dateInt;
     }
 
     public static int returnsIntFromParsedString(String toParse) throws ParseException {

@@ -1,6 +1,7 @@
 package scenarion_context;
 
 import gherkin.ast.Scenario;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.Page;
 
@@ -10,8 +11,9 @@ public class ScenarioContext {
 
     private static ScenarioContext instance = null;
 
-    private static Page currentPage;
+    private Page currentPage;
     private Scenario scenario;
+    private static WebElement webElement;
 
     private ScenarioContext() {
     }
@@ -24,6 +26,13 @@ public class ScenarioContext {
 
     public Page getCurrentPage() {
         return currentPage;
+    }
+
+    public WebElement getWebElement() {
+        return webElement;
+    }
+    public void setWebElement(WebElement webElement) {
+        ScenarioContext.webElement = webElement;
     }
 
     public void setScenario(Scenario scenario) {

@@ -25,6 +25,10 @@ public class CommonActions {
         webElement.click();
     }
 
+    public static void clickOnWebElementWoWaiters(WebElement webElement) {
+        webElement.click();
+    }
+
     public static void sendKeys(WebElement field, String inputData) {
         waiter.until(ExpectedConditions.visibilityOf(field));
         waiter.until(ExpectedConditions.elementToBeClickable(field));
@@ -43,6 +47,7 @@ public class CommonActions {
     }
 
     public static boolean webElementContainsText(String text, WebElement webElement) {
+        waiter.until(ExpectedConditions.visibilityOf(webElement));
         return webElement.getText().contains(text);
     }
 
