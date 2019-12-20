@@ -33,6 +33,7 @@ public class ComplexSteps {
 
         Helper.getParkRandomCars(carParkButtons, parkedStatus, amountOfClicks);
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("User parks random " + amountOfClicks + " cars");
     }
 
     @And("Cars are displayed")
@@ -49,6 +50,7 @@ public class ComplexSteps {
         if (amountOfCars.isDisplayed()) {
             CommonActions.clickOnAllFromList(deleteButtons);
             ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+            Log.info("Added cars are displayed on Car Park Page");
         }
     }
 
@@ -63,9 +65,10 @@ public class ComplexSteps {
         WebElement textField = Reflection.getWebElementByName
                 (scenarioContext.getCurrentPage(), "Note field");
         Assert.assertTrue(textField.getText().equals(text));
+        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
         if (amountOfCars.isDisplayed()) {
             CommonActions.clickOnAllFromList(deleteButtons);
-            ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+            Log.info("The same text on 'Note' field is displayed");
         }
     }
 
@@ -98,6 +101,7 @@ public class ComplexSteps {
         if (amountOfCars.isDisplayed()) {
             CommonActions.clickOnAllFromList(deleteButtons);
             ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+            Log.info("Comparison Page and Comparison table are displayed");
         }
     }
 
@@ -106,18 +110,21 @@ public class ComplexSteps {
         CommonActions.clickOnWebElement(Reflection.getWebElementByName(
                 ScenarioContext.getInstance().getCurrentPage(), make));
                 ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Make is selected in Make drop-down");
     }
 
     @And("selects (.*) in Model drop-down")
     public void selectsModelInModelDropDown(String model) throws Exception {
         CommonActions.clickOnWebElement(Reflection.getWebElementByName(ScenarioContext.getInstance().getCurrentPage(), model));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Model is selected in Model drop-down");
     }
 
     @And("selects price up to (.*) in Price field")
     public void selectsPriceUpToPriceInPriceField(String price) throws Exception {
         CommonActions.sendKeys(Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Price field"), price);
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Price is provided in Price field");
     }
 
     @Then("cars search was done and only cars of (.*) and (.*) under (.*) are displayed")
@@ -129,12 +136,14 @@ public class ComplexSteps {
         Assert.assertTrue(Helper.returnsIntFromParsedString(Helper.getRandomElement(listOfPrices).getText())
                 <= Helper.returnsIntFromParsedString(price));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Cars search was done and selected make and model, and cars under price are displayed");
     }
 
     @When("User selects (.*) category on Quick Truck Search")
     public void userSelectsCategoryCategoryOnQuickTruckSearch(String category) throws Exception {
         CommonActions.clickOnWebElement(Reflection.getWebElementByName(ScenarioContext.getInstance().getCurrentPage(), category));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Category on Quick Truck Search is selected");
     }
 
     @Then("detailed search of that (.*) is displayed")
@@ -145,6 +154,7 @@ public class ComplexSteps {
                 scenarioContext.getCurrentPage(), "Truck page header")
                 .getText().contains(category));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Page of selected category is displayed");
     }
 
     @Then("the selected '(.*)' matches the '(.*)'")
@@ -175,6 +185,7 @@ public class ComplexSteps {
                                 webElementName));
         Log.info(webElementName + " Web Element clicked successfully");
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+
     }
 
     @And("User selects a random car from {string}")
@@ -182,6 +193,7 @@ public class ComplexSteps {
         List<WebElement> carResults = Reflection.getListOfWebElements(scenarioContext.getCurrentPage(), elementName);
         Helper.getRandomCar(carResults);
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Random car from list is selected");
     }
 
     @Then("chosen car complies to the selected options: (.*), (.*), (.*)")

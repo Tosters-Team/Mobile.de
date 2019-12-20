@@ -43,29 +43,22 @@ public class GenericSteps {
     public void userIsLoggedInMobileDe() throws Exception {
         scenarioContext.setCurrentPage
                 (Reflection.getPageByName("Header"));
-
         CommonActions.clickOnWebElement
                 (Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Login button"));
-
         scenarioContext.setCurrentPage
                 (Reflection.getPageByName("Login Page"));
-
         CommonActions.sendKeys(Reflection.getWebElementByName
                         (scenarioContext.getCurrentPage(), "Email field"),
                 getProperty("EMAIL"));
-
         CommonActions.sendKeys(Reflection.getWebElementByName
                 (scenarioContext.getCurrentPage(),
                         "Password field"), getProperty("PASSWORD"));
-
         CommonActions.clickOnWebElement(Reflection.getWebElementByName
                 (scenarioContext.getCurrentPage(), "LogIn button"));
-
         scenarioContext.setCurrentPage(Reflection.getPageByName("Header"));
-
         Assert.assertTrue(Reflection.getWebElementByName
                 (scenarioContext.getCurrentPage(), "Logo").isDisplayed());
-        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Logged in successfully");
     }
 
     @And("User is on {string}")
@@ -82,12 +75,15 @@ public class GenericSteps {
                 (scenarioContext.getCurrentPage(), nameOfButtons);
         CommonActions.clickOnAllFromList(buttons);
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info("Successfully clicked on all " + nameOfButtons);
     }
 
     @Then("{string} message is displayed")
     public void thenMessageIsDisplayed(String message) throws Exception {
         CommonActions.waitUntilVisible(Reflection.getWebElementByName(scenarioContext.getCurrentPage(), message));
         ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        Log.info(message + " is displayed");
+
     }
 
     @When("User provides '(.*)' in '(.*)'")
