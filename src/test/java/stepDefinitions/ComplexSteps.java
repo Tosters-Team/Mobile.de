@@ -137,10 +137,10 @@ public class ComplexSteps {
                 .getText().contains(category));
     }
 
-    @Then("the selected (.*) matches the 'Displayed option'")
-    public void theOptionAppearsOnTopOfCarsList(String option) {
+    @Then("the selected '(.*)' matches the '(.*)'")
+    public void theOptionAppearsOnTopOfCarsList(String option, String webElementName) {
         CommonActions.webElementContainsText(option, Reflection.getWebElementByName
-                (scenarioContext.getCurrentPage(), "Displayed option"));
+                (scenarioContext.getCurrentPage(), webElementName));
         Log.info("Selected option matches provided option " + option);
 
     }
@@ -276,5 +276,34 @@ public class ComplexSteps {
                 Assert.assertTrue(firstCarOption > lastCarOption);
                 break;
         }
+    }
+
+    @Then("filters (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*) match the original search")
+    public void filtersConditionMakeModelMin_priceMax_priceFromYearToYearFromKmsToKmsMatchTheOriginalSearch(
+            String condition, String make, String model, String min_price, String max_price, String fromYear,
+            String toYear, String fromKms, String toKms ) {
+        List<WebElement> carResults = Reflection.getListOfWebElements(scenarioContext.getCurrentPage(),
+                "Saved search filters");
+        CommonActions.webElementContainsText(make, carResults.get(0));
+        CommonActions.webElementContainsText(model, carResults.get(0));
+        CommonActions.webElementContainsText(min_price, carResults.get(5));
+        CommonActions.webElementContainsText(max_price, carResults.get(6));
+        CommonActions.webElementContainsText(fromYear, carResults.get(3));
+        CommonActions.webElementContainsText(toYear, carResults.get(4));
+        CommonActions.webElementContainsText(fromKms, carResults.get(1));
+        CommonActions.webElementContainsText(toKms, carResults.get(2));
+    }
+
+    @And("Delete saved searches")
+    public void deleteSavedSearches() {
+        scenarioContext.setCurrentPage(Reflection.getPageByName("Header"));
+        CommonActions.clickOnWebElement(Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "My searches"));
+        CommonActions.clickOnWebElement(Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Show my searches"));
+        scenarioContext.setCurrentPage(Reflection.getPageByName("My Searches Page"));
+        Log.info("Accessed saved searches");
+        CommonActions.clickOnWebElement(Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Delete stored search"));
+        CommonActions.webElementContainsText("You have not saved any search requests.",
+                Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Empty search"));
+        Log.info(" Saved searches is cleared");
     }
 }

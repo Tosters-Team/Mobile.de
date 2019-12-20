@@ -10,7 +10,7 @@ Feature: Mobile de search function
     And User is on 'Side Panel Search Page'
     When User inserts value '<option>' in '<option_type>'
     And User clicks on 'Show offers'
-    Then the selected <option> matches the 'Displayed option'
+    Then the selected '<option>' matches the 'Displayed option'
     When User clicks on 'Close displayed option'
     Then 'Displayed option' is not displayed
     Examples:
@@ -45,39 +45,19 @@ Feature: Mobile de search function
     Given User clicks on 'Detailed search link' on 'Home Page'
     And User is on 'Detailed Car Search Page'
     When User clicks on option <condition>
-    And User selects 'Make field' field to populate
-    And User enters <make>
-    And User selects 'Model field' field to populate
-    And User enters <model>
-    And User selects 'Min price field' field to populate
-    And User enters <min_price>
-    And User selects 'Max price field' field to populate
-    And User enters <max_price>
-    And User selects 'Min year field' field to populate
-    And User enters <fromYear>
-    And User selects 'Max year field' field to populate
-    And User enters <toYear>
-    And User selects 'Min mileage field' field to populate
-    And User enters <fromKms>
-    And User selects 'Max mileage field' field to populate
-    And User enters <toKms>
+    And User inserts value '<make>' in 'Make field'
+    And User inserts value '<model>' in 'Model field'
+    And User inserts value '<min_price>' in 'Min price field'
+    And User inserts value '<max_price>' in 'Max price field'
+    And User inserts value '<fromYear>' in 'Min year field'
+    And User inserts value '<toYear>' in 'Max year field'
+    And User inserts value '<fromKms>' in 'Min mileage field'
+    And User inserts value '<toKms>' in 'Max mileage field'
     And User clicks on 'Show offers button'
     Then User is on 'Backup Car List Page'
     When User selects 'Sorting options drop-down' field to populate
     And User enters <sorting_option>
     Then displayed offers are sorted according to selected <sorting_option>
-
-
-
-#    Given user accessed Detailed Search page
-#    When user chooses desired <condition> in condition category on detailed search page
-#    And user chooses <make> and <model> in make, model, variant category
-#    And user chooses <min_price> and <max_price> in price range category
-#    And user selects vehicle's registration range <fromYear> and <toYear>
-#    And user selects vehicle's mileage range <fromKms> and <toKms>
-#    And user pressed Show Offers Button and was redirected to car list page
-#    When user selects from sorting drop down <sorting_option>
-#    Then cars are sorted according to selected <sorting_option>
     Examples:
       | condition | make     | model | min_price | max_price | fromYear | toYear | fromKms | toKms  | sorting_option      |
       | USED      | MERCEDES | S     | 10000     | 60000     | 1994     | 2015   | 20000   | 150000 | Price ascending     |
@@ -86,3 +66,63 @@ Feature: Mobile de search function
 #      | USED      | MERCEDES | S     | 10000     | 60000     | 1994     | 2015   | 20000   | 150000 | KM descending       |
 #      | USED      | MERCEDES | S     | 10000     | 60000     | 1994     | 2015   | 20000   | 150000 | 1st Reg. ascending  |
 #      | USED      | MERCEDES | S     | 10000     | 60000     | 1994     | 2015   | 20000   | 150000 | 1st Reg. descending |
+
+  @Test102
+  Scenario Outline: Validate Sell option functionality
+    Given User is logged in Mobile de
+    And User clicks on 'Sell tab' on 'Home Page'
+    And User is on 'Sell Page'
+    And User inserts value '<make>' in 'Make field'
+    And User inserts value '<model>' in 'Model field'
+    And User inserts value '<year>' in 'Year'
+    And User inserts value '<month>' in 'Month'
+    And User inserts value '<KMs>' in 'Mileage'
+    And User selects specific '<fuelType>'
+    And User selects specific 'description'
+    And User selects specific '<description>'
+    And User selects specific '<equipment>'
+    And User selects specific '<selling_plan>'
+    And User inserts value '<zip_code>' in 'Zip code field'
+    And User clicks on 'Continue button'
+    Then the selected '<model>' matches the 'Sell your vehicle text'
+    And 'Your car price' message is displayed
+    Examples:
+      | make     | model   | year | month | KMs    | fuelType | description | equipment  | selling_plan   | zip_code |
+#      | MERCEDES | VANEO   | 2004 | M    | 195000 | DIESEL   | Model 3     | Equipment 6 | Sell option 1 | 54126    |
+#      | RENAULT  | ESPACE  | 2005 | J    | 250000 | DIESEL   | Model 2     | Equipment 5 | Sell option 2 | 62148    |
+      | KIA      | SORENTO | 2005 | A     | 150000 | PETROL   | Model 2     | Equipment 1 | Sell option 2 | 75482    |
+
+  @Test105
+  Scenario Outline: Validate search save functionality
+    Given User is logged in Mobile de
+    And User clicks on 'Detailed search link' on 'Home Page'
+    And User is on 'Detailed Car Search Page'
+    When User clicks on option <condition>
+    And User clicks on 'Make field'
+    And User inserts value '<make>' in 'Make field'
+    And User clicks on 'Make field'
+    And User clicks on 'Model field'
+    And User inserts value '<model>' in 'Model field'
+    And User clicks on 'Model field'
+    And User inserts value '<min_price>' in 'Min price field'
+    And User inserts value '<max_price>' in 'Max price field'
+    And User inserts value '<fromYear>' in 'Min year field'
+    And User inserts value '<toYear>' in 'Max year field'
+    And User inserts value '<fromKms>' in 'Min mileage field'
+    And User inserts value '<toKms>' in 'Max mileage field'
+    And User clicks on 'Show offers button'
+    And User clicks on 'Save search button' on 'Backup Car List Page'
+    And User clicks on 'Save search button on pop-up'
+    And User clicks on 'My searches' on 'Header'
+    And User clicks on 'Show my searches'
+    And User is on 'My Searches Page'
+    Then 'Stored search' message is displayed
+    When User clicks on 'Stored search'
+    And User is on 'Backup Car List Page'
+    Then filters <condition>, <make>, <model>, <min_price>, <max_price>, <fromYear>, <toYear>, <fromKms>, <toKms> match the original search
+    And Delete saved searches
+    Examples:
+      | condition | make    | model   | min_price | max_price | fromYear | toYear | fromKms | toKms |
+      | USED      | HONDA   | ACCORD  | 21000     | 30000     | 2015     | 2019   | 5000    | 30000 |
+#      | USED      | TOYOTA  | CAMRY   | 10000     | 20000     | 2011     | 2018   | 40000   | 80000 |
+#      | USED      | PORSCHE | CAYENNE | 70000     | 90000     | 2016     | 2017   | 10000   | 20000 |
