@@ -12,7 +12,7 @@ public class HomePageQuickSearch extends Page {
         super();
     }
 
-
+    @WebElementName(name = "Sell tab")
     @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
     private WebElement sellTab;
 

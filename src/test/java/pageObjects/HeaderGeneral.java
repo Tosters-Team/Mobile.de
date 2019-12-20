@@ -32,9 +32,11 @@ public class HeaderGeneral extends Page {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[2]")
     private WebElement myCarParkButton;
 
+    @WebElementName(name = "My searches")
     @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/header[1]/div[2]/nav[1]/div[1]/ul[2]/li[1]/a[1]")
     private WebElement mySearchesButton;
 
+    @WebElementName(name = "Show my searches")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[2]/li[1]/ul/li[1]/a/span")
     private WebElement showMySearches;
 

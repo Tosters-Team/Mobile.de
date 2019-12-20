@@ -98,4 +98,13 @@ public class GenericSteps {
                 (scenarioContext.getCurrentPage(), optionType), option);
         Log.info("User entered " + option + " value in " + optionType + " field successfully");
     }
+
+    @And("User selects specific '(.*)'")
+    public void userSelectsSpecificFuelType(String webElementName) {
+        CommonActions.clickOnWebElement
+                (Reflection.getWebElementByName
+                        (scenarioContext.getCurrentPage(),
+                                webElementName));
+        Log.info(webElementName + " Web Element clicked successfully");
+    }
 }

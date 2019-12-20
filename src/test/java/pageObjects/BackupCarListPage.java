@@ -25,15 +25,18 @@ public class BackupCarListPage extends Page {
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]")
     private List<WebElement> carResults;
 
+    @WebElementName(name = "Save search button")
     @FindBy(xpath = "//*[@id=\"saveSearchLink\"]")
     private WebElement saveSearchButton;
 
     @FindBy(xpath = "//*[@id=\"saveSearchForm\"]/div/div[2]/div/input")
     private WebElement emailNotificationCheckBox;
 
+    @WebElementName(name = "Save search button on pop-up")
     @FindBy(xpath = "//*[@id=\"saveSearchBtn\"]")
     private WebElement saveSearchOnPopUp;
 
+    @WebElementName(name = "Saved search filters")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[2]/div[*]")
     private List<WebElement> savedSearchFilters;
 
