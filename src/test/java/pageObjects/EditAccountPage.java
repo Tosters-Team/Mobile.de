@@ -12,7 +12,7 @@ public class EditAccountPage extends Page {
         super();
     }
 
-    @WebElementName(name = "[Save button]")
+    @WebElementName(name = "Save button")
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div[2]/form/div/div[*]/div[2]/button/span")
     private WebElement saveChanging;
 
@@ -33,7 +33,7 @@ public class EditAccountPage extends Page {
     @FindBy(xpath = "//*[@id=\"houseNumber\"]")
     private WebElement houseNumber;
 
-    @WebElementName(name = "'Changed' message")
+    @WebElementName(name = "Changed")
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div[2]/div[*]/div/div[3]/span")
     private WebElement changedMessage;
 
@@ -45,21 +45,13 @@ public class EditAccountPage extends Page {
     @FindBy(xpath = "//*[@id=\"city\"]")
     private WebElement cityField;
 
-    @WebElementName(name = "Change name")
+    @WebElementName(name = "Change name button")
     @FindBy(xpath = "//*[@id=\"app\"]//div[2]/div[1]/div/div[2]/a/span")
     private WebElement changeName;
 
-    @WebElementName(name = "Change address")
+    @WebElementName(name = "Change address button")
     @FindBy(xpath = "//*[@id=\"app\"]//div[2]/div[2]/div/div[2]/a/span")
     private WebElement changeAddress;
-
-    @WebElementName(name = "Edited section")
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div[2]")
-    private WebElement editedSection;
-
-    public WebElement getEditedSection() {
-        return editedSection;
-    }
 
     public WebElement getChangeName() {
         return changeName;

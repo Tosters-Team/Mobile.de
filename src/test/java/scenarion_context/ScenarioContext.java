@@ -18,6 +18,21 @@ public class ScenarioContext {
     private ScenarioContext() {
     }
 
+    public static ScenarioContext getInstance() {
+        if (instance == null) {
+            return new ScenarioContext();
+        } else return instance;
+    }
+
+
+    public WebElement getWebElement() {
+        return webElement;
+    }
+
+    public void setWebElement(WebElement webElement) {
+        ScenarioContext.webElement = webElement;
+    }
+
     public void setCurrentPage(Page currentPage) {
         this.currentPage = currentPage;
         PageFactory.initElements(driver, currentPage);
@@ -41,11 +56,5 @@ public class ScenarioContext {
 
     public Scenario getScenario() {
         return scenario;
-    }
-
-    public static ScenarioContext getInstance() {
-        if (instance == null) {
-            return new ScenarioContext();
-        } else return instance;
     }
 }
