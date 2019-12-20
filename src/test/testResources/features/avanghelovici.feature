@@ -43,8 +43,8 @@ Feature: Demo feature
   Scenario: Validate Login functionality with valid credentials
     Given User clicks on 'Login button' on 'Header'
     And User is on 'Login Page'
-    When User insert "Vangartur@gmail.com" in 'Email field'
-    And User insert "Artiq!23" in 'Password field'
+    When User provides 'Vangartur@gmail.com' in 'Email field'
+    And User provides 'Artiq!23' in 'Password field'
     And User clicks on 'LogIn button'
     Then User is on 'Home Page'
 
@@ -52,8 +52,8 @@ Feature: Demo feature
   Scenario: Validate Login impossibility with invalid credentials
     Given User clicks on 'Login button' on 'Header'
     And User is on 'Login Page'
-    When User insert "Vaasdasdadur@gmail.com" in 'Email field'
-    And User insert "Aadsdasdtiq!23" in 'Password field'
+    When User provides 'Vaasdasdadur@gmail.com' in 'Email field'
+    And User provides 'Aadsdasdtiq!23' in 'Password field'
     And User clicks on 'LogIn button'
     Then 'The credentials you provided cannot be confirmed as authentic.' message is displayed
 
@@ -64,23 +64,18 @@ Feature: Demo feature
     And User clicks on 'Edit Account'
     Then User is on 'Edit Account Page'
     When User clicks on 'Change name button'
-    And User clicks on 'First Name field' element
-    And User send <first> in element
-    And User clicks on 'Last Name field' element
-    And User send <last> in element
+    And User provides '<first>' in 'First Name field'
+    And User provides '<last>' in 'Last Name field'
     And User clicks on 'Save button'
     Then 'Changed' message is displayed
     When User clicks on 'Change address button'
-    And User clicks on 'Street field' element
-    And User send <street> in element
-    And User clicks on 'House Number field' element
-    And User send <houseNumber> in element
-    And User clicks on 'ZipCode field' element
-    And User send <zipCode> in element
-    And User clicks on 'City field' element
-    And User send <city> in element
+    And User provides '<street>' in 'Street field'
+    And User provides '<houseNumber>' in 'House Number field'
+    And User provides '<zipCode>' in 'ZipCode field'
+    And User provides '<city>' in 'City field'
     And User clicks on 'Save button'
     Then 'Changed' message is displayed
+
     Examples:
       | first  | last   | street           | houseNumber | zipCode | city          |
       | Jackie | Chan   | ChinaTown        | 22          | 12345   | Hong Kong     |

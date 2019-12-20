@@ -62,38 +62,9 @@ public class QuickTruckSearch extends Page {
         return quickTruckPageHeader;
     }
 
-    @Override
-    public WebElement getWebElementByName(String pageName) {
-        super.getWebElementByName(pageName);
-        switch (pageName) {
-            case "Vans and Trucks up to 7.5 t":
-                return getVansNtRucksUpTo7p5t();
-            case "Trucks over 7.5 t":
-                return getTrucksOver7p5t();
-            case "Semi-Trailer Trucks":
-                return getSemiTrailerTruck();
-            case "Trailers":
-                return getTrailersCategory();
-            case "Semi-Trailers":
-                return getSemiTrailers();
-            case "Construction Machines":
-                return getConstructionMachines();
-            case "Buses":
-                return getBusesCategory();
-            case "Agricultural Vehicles":
-                return getAgriculturalVehicles();
-            case "Forklift Trucks":
-                return getForkliftTrucks();
-            default:
-                return null;
-        }
-    }
-
     public WebElement getVansNtRucksUpTo7p5t() {
         return vansNtRucksUpTo7p5t;
     }
-
-
 
     public WebElement getTrucksOver7p5t() {
         return trucksOver7p5t;

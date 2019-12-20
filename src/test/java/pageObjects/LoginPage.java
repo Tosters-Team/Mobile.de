@@ -33,8 +33,12 @@ public class LoginPage extends Page {
     @FindBy(xpath = "//*[@id=\"container\"]/div[1]/div/div/div/span")
     private WebElement notValidCredentials;
 
-    public WebElement getEMailField() {
+    public WebElement getEmailField() {
         return eMailField;
+    }
+
+    public WebElement getLoginPage() {
+        return loginPage;
     }
 
     public WebElement getPasswordField() {

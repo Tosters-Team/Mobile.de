@@ -53,14 +53,6 @@ public class EditAccountPage extends Page {
     @FindBy(xpath = "//*[@id=\"app\"]//div[2]/div[2]/div/div[2]/a/span")
     private WebElement changeAddress;
 
-    @WebElementName(name = "Edited section")
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div[2]")
-    private WebElement editedSection;
-
-    public WebElement getEditedSection() {
-        return editedSection;
-    }
-
     public WebElement getChangeName() {
         return changeName;
     }

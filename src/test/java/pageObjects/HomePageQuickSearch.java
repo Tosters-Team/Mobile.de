@@ -12,28 +12,6 @@ public class HomePageQuickSearch extends Page {
         super();
     }
 
-    @Override
-    public WebElement getWebElementByName(String pageName) {
-        super.getWebElementByName(pageName);
-        switch (pageName) {
-            case "BMW":
-                return getMakeBmw();
-            case "Mercedes-Benz":
-                return getMakeMercedes();
-            case "Volkswagen":
-                return getMakeVolkswagen();
-            case "Golf":
-                return getModelGolf();
-            case "5":
-                return getModelFiveSeriesBmw();
-            case "E":
-                return getModelEClassMercedes();
-            default:
-                return null;
-        }
-    }
-
-
 
     @FindBy(xpath = "//*[@id=\"quicksearch__SellTab\"]")
     private WebElement sellTab;
