@@ -116,7 +116,7 @@ Feature: Mobile de search function
     And User clicks on 'My searches' on 'Header'
     And User clicks on 'Show my searches'
     And User is on 'My Searches Page'
-    Then 'Stored search' message is displayed
+    Then 'Stored search' element is present on page
     When User clicks on 'Stored search'
     And User is on 'Backup Car List Page'
     Then filters <condition>, <make>, <model>, <min_price>, <max_price>, <fromYear>, <toYear>, <fromKms>, <toKms> match the original search

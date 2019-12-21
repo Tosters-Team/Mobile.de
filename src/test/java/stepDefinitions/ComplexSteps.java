@@ -353,4 +353,12 @@ public class ComplexSteps {
                                 webElementName));
         Log.info(webElementName + " Web Element clicked successfully");
     }
+
+    @Then("{string} element is present on page")
+    public void storedSearchElementIsPresentOnPage(String webElementName) {
+        CommonActions.waitUntilVisible(Reflection.getWebElementByName
+                (scenarioContext.getCurrentPage(),
+                        webElementName));
+        Log.info(webElementName + " is displayed");
+    }
 }

@@ -21,6 +21,6 @@ public class ComparisonPage extends Page {
     private WebElement comparisonPageHeader;
 
     @WebElementName(name = "Comparison table")
-    @FindBy(xpath = "//*[@id=\\\"app\\\"]/div/div[2]/div/div/div[1]/div/div[3]/button")
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div/div[1]/div/div[3]/button")
     private WebElement comparisonTable;
 }

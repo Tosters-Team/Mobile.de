@@ -16,14 +16,14 @@ public class MySearchesPage extends Page {
     }
 
     @WebElementName(name = "Delete stored search")
-    @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div[1]/div/div[2]/p[2]")
+    @FindBy(xpath = "//p[@class='search-delete']")
     private WebElement deleteSearch;
 
     @WebElementName(name = "Stored search")
-    @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div[1]/div/div[1]/a/h4")
+    @FindBy(xpath = "//a[@class='link link--hidden u-text-decoration-none u-block search-execute']")
     private WebElement storedSearch;
 
     @WebElementName(name = "Empty search")
-    @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div/b")
+    @FindBy(xpath = "//b[contains(text(),'You have not saved any search requests.')]")
     private WebElement emptySearch;
 }

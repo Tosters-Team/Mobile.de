@@ -59,9 +59,7 @@ public class CommonActions {
     }
 
     public static void scrollToElementAndClickOnIt(WebElement webElement) throws InterruptedException {
-        Thread.sleep(2000);
-        waiter.until(ExpectedConditions.visibilityOf(webElement));
-        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
+        Thread.sleep(3000);
         webElement.click();
     }
 }
