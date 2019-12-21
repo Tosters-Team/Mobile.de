@@ -55,5 +55,4 @@ public class EditAccountPage extends Page {
     @WebElementName(name = "Change address button")
     @FindBy(xpath = "//*[@id=\"app\"]//div[2]/div[2]/div/div[2]/a/span")
     private WebElement changeAddress;
-
 }

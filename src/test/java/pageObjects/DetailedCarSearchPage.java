@@ -35,6 +35,7 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"selectModel1-ds\"]")
     private WebElement model;
 
+    @WebElementName(name = "CABRIO")
     @FindBy(xpath = "//*[@id=\"categories-Cabrio-ds\"]")
     private WebElement vehicleTypeCabriolet;
 
@@ -46,15 +47,19 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"categories-Limousine-ds\"]")
     private WebElement vehicleTypeSaloon;
 
+    @WebElementName(name = "SMALL CAR")
     @FindBy(xpath = "//*[@id=\"categories-SmallCar-ds\"]")
     private WebElement vehicleTypeSmallCar;
 
+    @WebElementName(name = "COUPE")
     @FindBy(xpath = "//*[@id=\"categories-SportsCar-ds\"]")
     private WebElement vehicleTypeCoupe;
 
+    @WebElementName(name = "SUV")
     @FindBy(xpath = "//*[@id=\"categories-OffRoad-ds\"]")
     private WebElement vehicleTypeSuv;
 
+    @WebElementName(name = "VAN")
     @FindBy(xpath = "//*[@id=\"categories-Van-ds\"]")
     private WebElement veicleTypeVan;
 
@@ -82,12 +87,6 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"maxMileage\"]")
     private WebElement kilometerTo;
 
-    @FindBy(xpath = "//*[@id=\"minPowerAsArray\"]")
-    private WebElement powerFrom;
-
-    @FindBy(xpath = "//*[@id=\"maxPowerAsArray\"]")
-    private WebElement powerTo;
-
     @WebElementName(name = "PETROL")
     @FindBy(xpath = "//*[@id=\"fuels-PETROL-ds\"]")
     private WebElement fuelTypePetrol;
@@ -100,123 +99,15 @@ public class DetailedCarSearchPage extends Page {
     @FindBy(xpath = "//*[@id=\"transmissions-MANUAL_GEAR-ds\"]")
     private WebElement transmissionTypeManual;
 
-    @WebElementName(name = "AUTOMATIC")
+    @WebElementName(name = "SEMIAUTO")
     @FindBy(xpath = "//*[@id=\"transmissions-SEMIAUTOMATIC_GEAR-ds\"]")
     private WebElement transmissionTypeSemiAuto;
 
+    @WebElementName(name = "AUTOMATIC")
     @FindBy(xpath = "//*[@id=\"transmissions-AUTOMATIC_GEAR-ds\"]")
     private WebElement transmissionTypeAuto;
-
-    @FindBy(xpath = "//*[@id=\"minCubicCapacity\"]")
-    private WebElement cubicCapacityFrom;
-
-    @FindBy(xpath = "//*[@id=\"maxCubicCapacity\"]")
-    private WebElement cubicCapacityTo;
 
     @WebElementName(name = "Show offers button")
     @FindBy(xpath = "//*[@id=\"dsp-upper-search-btn\"]")
     private WebElement showOffersButton;
-
-    public WebElement getCondition(String condition) {
-        if (condition.equals("NEW")) return conditionNew;
-        if (condition.equals("USED")) return conditionUsed;
-        else return null;
-    }
-
-
-    public WebElement getMake() {
-        return make;
-    }
-
-    public WebElement getModel() {
-        return model;
-    }
-
-    public WebElement getVehicleType(String type) {
-        switch (type) {
-            case "CABRIOLET":
-                return vehicleTypeCabriolet;
-            case "ESTATE":
-                return vehicleTypeEstate;
-            case "SALOON":
-                return vehicleTypeSaloon;
-            case "SMALLCAR":
-                return vehicleTypeSmallCar;
-            case "COUPE":
-                return vehicleTypeCoupe;
-            case "SUV":
-                return vehicleTypeSuv;
-            case "VAN":
-                return veicleTypeVan;
-            default:
-                return null;
-        }
-    }
-
-    public WebElement getPriceFrom() {
-        return priceFrom;
-    }
-
-    public WebElement getPriceTo() {
-        return priceTo;
-    }
-
-    public WebElement getFirstRegistrationFrom() {
-        return firstRegistrationFrom;
-    }
-
-    public WebElement getFirstRegistrationTo() {
-        return firstRegistrationTo;
-    }
-
-    public WebElement getKilometerFrom() {
-        return kilometerFrom;
-    }
-
-    public WebElement getKilometerTo() {
-        return kilometerTo;
-    }
-
-    public WebElement getPowerFrom() {
-        return powerFrom;
-    }
-
-    public WebElement getPowerTo() {
-        return powerTo;
-    }
-
-    public WebElement getFuelType(String fuelType) {
-        if (fuelType.equals("PETROL")) return fuelTypePetrol;
-        if (fuelType.equals("DIESEL")) return fuelTypeDiesel;
-        else return null;
-    }
-
-    public WebElement getTranmissionType(String transmission) {
-        switch (transmission) {
-            case "MANUAL":
-                return transmissionTypeManual;
-            case "SEMIAUTO":
-                return transmissionTypeSemiAuto;
-            case "AUTOMATIC":
-                return transmissionTypeAuto;
-            default:
-                return null;
-        }
-    }
-
-    public WebElement getCubicCapacityFrom() {
-        return cubicCapacityFrom;
-    }
-
-    public WebElement getCubicCapacityTo() {
-        return cubicCapacityTo;
-    }
-
-    public WebElement getShowOffersButton() {
-        return showOffersButton;
-    }
-
-    public WebElement getPageHeader() {
-        return pageHeader;
-    }
 }

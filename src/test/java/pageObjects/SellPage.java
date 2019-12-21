@@ -63,7 +63,7 @@ public class SellPage extends Page {
     @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[1]/div[2]")
     private WebElement equipmentLevelOption1;
 
-    @WebElementName(name= "Equipment 2")
+    @WebElementName(name = "Equipment 2")
     @FindBy(xpath = "//*[@id=\"select-modelvariant-div\"]/div[2]/div/div[2]/div[2]")
     private WebElement equipmentLevelOption2;
 
@@ -110,80 +110,4 @@ public class SellPage extends Page {
     @WebElementName(name = "Your car price")
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/article/section[2]/div/div[1]/span")
     private WebElement price;
-
-    public WebElement getBrand() {
-        return brand;
-    }
-
-    public WebElement getModel() {
-        return model;
-    }
-
-    public WebElement getFirstRegistrationYear() {
-        return firstRegistrationYear;
-    }
-
-    public WebElement getGetFirstRegistrationMonth() {
-        return getFirstRegistrationMonth;
-    }
-
-    public WebElement getMileage() {
-        return mileage;
-    }
-
-    public WebElement getFuelType(String fuelType) {
-        if(fuelType.equals("PETROL")) return getFuelTypePetrol;
-        if(fuelType.equals("DIESEL")) return fuelTypeDiesel;
-        else return null;
-    }
-
-    public WebElement getModelDescriptionDropDown() {
-        return modelDescriptionDropDown;
-    }
-
-    public WebElement getModelDescriptionOption(String option) {
-        switch (option) {
-            case "1": return modelDescription1;
-            case "2": return modelDescription2;
-            case "3": return modelDescription3;
-            default: return null;
-        }
-    }
-
-    public WebElement getEquipmentLevelOption(String trim) {
-        switch (trim) {
-            case "1": return equipmentLevelOption1;
-            case "2": return equipmentLevelOption2;
-            case "3": return equipmentLevelOption3;
-            case "4": return equipmentLevelOption4;
-            case "5": return equipmentLevelOption5;
-            case "6": return equipmentLevelOption6;
-            default: return null;
-        }
-    }
-
-    public WebElement getWhenToSellOption(String sellOption) {
-        switch (sellOption) {
-            case "1": return whenToSellOption1;
-            case "2": return whenToSellOption2;
-            case "3": return whenToSellOption3;
-            default: return null;
-        }
-    }
-
-    public WebElement getZipCode() {
-        return zipCode;
-    }
-
-    public WebElement getContinueButton() {
-        return continueButton;
-    }
-
-    public WebElement getSellYourVehicleText() {
-        return sellYourVehicleText;
-    }
-
-    public WebElement getPrice() {
-        return price;
-    }
 }

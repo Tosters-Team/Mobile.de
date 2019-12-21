@@ -22,15 +22,14 @@ public class ScreenShotUtil {
     public static void takeScreenShot(String fileName) throws Exception {
 
         TakesScreenshot scrShot = ((TakesScreenshot) Hooks.driver);
-        byte [] srcFile = scrShot.getScreenshotAs(OutputType.BYTES);
-        scenario.embed(srcFile,"image/png");
+        byte[] srcFile = scrShot.getScreenshotAs(OutputType.BYTES);
+        scenario.embed(srcFile, "image/png");
         FileUtils.writeByteArrayToFile(new File(
                 getProperty("PATH.TO.SCREENSHOTS.FOLDER")
                         + new SimpleDateFormat(getProperty("DATE.FORMAT")
                         + " "
                         + fileName
-                        + getProperty("FORMAT.OF.SCREENSHOT")).format(new Date())),srcFile);
+                        + getProperty("FORMAT.OF.SCREENSHOT")).format(new Date())), srcFile);
 
     }
-
 }

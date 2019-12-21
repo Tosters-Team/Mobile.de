@@ -7,7 +7,6 @@ import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
 import java.util.List;
-import java.util.Random;
 
 @Getter
 
@@ -43,30 +42,4 @@ public class BackupCarListPage extends Page {
     @WebElementName(name = "Saved search filters")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[2]/div[*]")
     private List<WebElement> savedSearchFilters;
-
-    public WebElement getHeaderMessage() {
-        return headerMessage;
-    }
-
-    public WebElement getSortingDropDown() {
-        return sortingDropDown;
-    }
-
-    public WebElement getRandomCar() {
-        Random random = new Random();
-        int randomCar = random.nextInt((carResults.size()-1) - 1) + 1;
-        return carResults.get(randomCar);
-    }
-
-    public WebElement getFirstCarOnPage() {
-        return carResults.get(1);
-    }
-
-    public WebElement getLastCarOnPage() {
-        return carResults.get(23);
-    }
-
-    public WebElement getSavedSearchFilter(int filterIndex) {
-        return savedSearchFilters.get(filterIndex);
-    }
 }

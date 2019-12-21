@@ -7,6 +7,7 @@ import pageObjects.annotations.PageName;
 import pageObjects.annotations.WebElementName;
 
 import java.util.List;
+
 @Getter
 
 @PageName(name = "Car List Page")
@@ -31,7 +32,4 @@ public class CarListPage extends Page {
     @WebElementName(name = "List of announcements")
     @FindBy(xpath = "//*[@id=\"z1234\"]/div[3]/div/div[3]/div[4]/div[2]/div[3]/div[*]/a/div/div[2]/div[1]/div[1]/div")
     private List<WebElement> listAnnouncement;
-
-
-
 }

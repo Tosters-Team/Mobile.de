@@ -15,31 +15,6 @@ public class SidePanelSearchPage extends Page {
         super();
     }
 
-    @FindBy(xpath = "[id^='sio-'][id$='-search-btn']")
-    private WebElement showOffersOnPopup;
-
-
-    @FindBy(xpath = "//*[@id=\"sio-opener-condition\"]/div[2]/div[2]/span")
-    private WebElement vehicleConditionChange;
-
-    @FindBy(xpath = "//*[@id=\"usage-USED-ds\"]")
-    private WebElement vehicleConditionUsed;
-
-    @FindBy(xpath = "//*[@id=\"sio-condition-search-btn\"]")
-    private WebElement showOffersOnConditionButton;
-
-    @FindBy(xpath = "//*[@id=\"sio-opener-make-model-variant\"]/div[2]/div[2]/span")
-    private WebElement makeModelChange;
-
-    @FindBy(xpath = "//*[@id=\"selectMake1-ds\"]")
-    private WebElement make;
-
-    @FindBy(xpath = "//*[@id=\"selectModel1-ds\"]")
-    private WebElement model;
-
-    @FindBy(xpath = "//*[@id=\"sio-makeModelVariant-search-btn\"]")
-    private WebElement showOffersOnMakeModelButton;
-
     @WebElementName(name = "Price_from")
     @FindBy(xpath = "//*[@id=\"minPrice\"]")
     private WebElement priceFrom;
@@ -75,16 +50,4 @@ public class SidePanelSearchPage extends Page {
     @WebElementName(name = "Close displayed option")
     @FindBy(xpath = "/html/body/div[3]/div/div[3]/div[4]/div[2]/div[1]/div[2]/div/a/i")
     private WebElement closeDisplayedOption;
-
-    public WebElement getOptionType(String optionType) {
-        switch (optionType){
-            case "Price_from"        : return priceFrom;
-            case "Price_to"          : return priceTo;
-            case "Registration_from" : return firstRegistrationFrom;
-            case "Registration_to"   : return firstRegistrationTo;
-            case "Kilometer_from"    : return kilometerFrom;
-            case "Kilometer_to"      : return kilometerTo;
-            default: return  null;
-        }
-    }
 }

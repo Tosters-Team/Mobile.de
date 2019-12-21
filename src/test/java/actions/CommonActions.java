@@ -57,4 +57,11 @@ public class CommonActions {
             clickOnWebElement(listOfWebElements.get(i));
         }
     }
+
+    public static void scrollToElementAndClickOnIt(WebElement webElement) throws InterruptedException {
+        Thread.sleep(2000);
+        waiter.until(ExpectedConditions.visibilityOf(webElement));
+        waiter.until(ExpectedConditions.elementToBeClickable(webElement));
+        webElement.click();
+    }
 }

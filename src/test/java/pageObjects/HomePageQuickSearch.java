@@ -58,5 +58,4 @@ public class HomePageQuickSearch extends Page {
     @WebElementName(name = "Price field")
     @FindBy(xpath = "//*[@id=\"qsprc\"]")
     private WebElement priceUpTo;
-
 }

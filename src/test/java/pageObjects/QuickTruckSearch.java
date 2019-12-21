@@ -59,5 +59,4 @@ public class QuickTruckSearch extends Page {
     @WebElementName(name = "Quick Truck Search")
     @FindBy(xpath = "/html/body/div[3]/div[2]/div[2]/div[2]/div/div/div/h3")
     private WebElement quickTruckPageHeader;
-
 }

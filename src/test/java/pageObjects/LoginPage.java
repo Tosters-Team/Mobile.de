@@ -35,7 +35,6 @@ public class LoginPage extends Page {
     @WebElementName(name = "The credentials you provided cannot be confirmed as authentic.")
     @FindBy(xpath = "//*[@id=\"container\"]/div[1]/div/div/div/span")
     private WebElement notValidCredentials;
-
 }
 
 

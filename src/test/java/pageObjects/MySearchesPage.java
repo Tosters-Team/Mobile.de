@@ -26,11 +26,4 @@ public class MySearchesPage extends Page {
     @WebElementName(name = "Empty search")
     @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div/b")
     private WebElement emptySearch;
-
-    @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
-    private WebElement mobileDeLogo;
-
-    @FindBy(xpath = "//*[@id=\"mySavedSearch\"]/div[2]/div/div[1]/div/div[1]/a")
-    private WebElement showSavedSearch;
-
 }

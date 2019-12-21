@@ -58,7 +58,7 @@ public class HeaderGeneral extends Page {
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/nav/div/ul[1]/li[3]/ul/li[1]")
     private WebElement englishLanguage;
 
+    @WebElementName(name = "Mobile logo")
     @FindBy(xpath = "//*[@id=\"main-header\"]/div[2]/div/a/i")
     private WebElement mobileDeLogo;
-
 }

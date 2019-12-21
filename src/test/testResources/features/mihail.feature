@@ -1,3 +1,4 @@
+@Mihail
 Feature: Mobile de search function
 
  Background: Mobile de is opened
@@ -55,8 +56,7 @@ Feature: Mobile de search function
     And User inserts value '<toKms>' in 'Max mileage field'
     And User clicks on 'Show offers button'
     Then User is on 'Backup Car List Page'
-    When User selects 'Sorting options drop-down' field to populate
-    And User enters <sorting_option>
+    When User inserts value '<sorting_option>' in 'Sorting options drop-down'
     Then displayed offers are sorted according to selected <sorting_option>
     Examples:
       | condition | make     | model | min_price | max_price | fromYear | toYear | fromKms | toKms  | sorting_option      |
@@ -77,11 +77,11 @@ Feature: Mobile de search function
     And User inserts value '<year>' in 'Year'
     And User inserts value '<month>' in 'Month'
     And User inserts value '<KMs>' in 'Mileage'
-    And User selects specific '<fuelType>'
+    And User scrolls to and clicks on selected '<fuelType>'
     And User selects specific 'description'
     And User selects specific '<description>'
     And User selects specific '<equipment>'
-    And User selects specific '<selling_plan>'
+    And User scrolls to and clicks on selected '<selling_plan>'
     And User inserts value '<zip_code>' in 'Zip code field'
     And User clicks on 'Continue button'
     Then the selected '<model>' matches the 'Sell your vehicle text'

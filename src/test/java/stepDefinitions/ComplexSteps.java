@@ -13,7 +13,6 @@ import utils.Log;
 import utils.Reflection;
 import utils.ScreenShotUtil;
 
-
 import java.util.List;
 
 import static stepDefinitions.Hooks.driver;
@@ -109,7 +108,7 @@ public class ComplexSteps {
     public void userSelectsMakeInMakeDropDown(String make) throws Exception {
         CommonActions.clickOnWebElement(Reflection.getWebElementByName(
                 ScenarioContext.getInstance().getCurrentPage(), make));
-                ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
+        ScreenShotUtil.takeScreenShot(Thread.currentThread().getStackTrace()[1].getMethodName());
         Log.info("Make is selected in Make drop-down");
     }
 
@@ -320,7 +319,7 @@ public class ComplexSteps {
     @Then("filters (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*) match the original search")
     public void filtersConditionMakeModelMin_priceMax_priceFromYearToYearFromKmsToKmsMatchTheOriginalSearch(
             String condition, String make, String model, String min_price, String max_price, String fromYear,
-            String toYear, String fromKms, String toKms ) {
+            String toYear, String fromKms, String toKms) {
         List<WebElement> carResults = Reflection.getListOfWebElements(scenarioContext.getCurrentPage(),
                 "Saved search filters");
         CommonActions.webElementContainsText(make, carResults.get(0));
@@ -344,5 +343,14 @@ public class ComplexSteps {
         CommonActions.webElementContainsText("You have not saved any search requests.",
                 Reflection.getWebElementByName(scenarioContext.getCurrentPage(), "Empty search"));
         Log.info(" Saved searches is cleared");
+    }
+
+    @And("User scrolls to and clicks on selected '(.*)'")
+    public void userScrollsToAndClicksOnSelectedFuelType(String webElementName) throws InterruptedException {
+        CommonActions.scrollToElementAndClickOnIt
+                (Reflection.getWebElementByName
+                        (scenarioContext.getCurrentPage(),
+                                webElementName));
+        Log.info(webElementName + " Web Element clicked successfully");
     }
 }
